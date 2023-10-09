@@ -1,1 +1,1 @@
-# DotNetGroupAssignment2_HotelManagementSystem
+# DotNetGroupAssignment2
