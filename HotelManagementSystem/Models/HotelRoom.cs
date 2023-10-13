@@ -26,6 +26,7 @@ namespace HotelManagementSystem.Models
         private double roomHeight;
         private int maximumGuests;
         private bool petsAllowed;
+        private RoomFacilities roomFacilities;
 
         public double RoomSize 
         {
