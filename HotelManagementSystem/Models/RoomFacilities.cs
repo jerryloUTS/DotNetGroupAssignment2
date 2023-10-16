@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem.Models
 {
-    internal class RoomFacilities
+    public class RoomFacilities
     {
         private bool balcony;
         private int numberOfBeds;

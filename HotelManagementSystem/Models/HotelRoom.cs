@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem.Models
 {
-    enum RoomClass
+    public enum RoomClass
     {
         Economy,
         Standard,
@@ -54,8 +54,8 @@ namespace HotelManagementSystem.Models
         public double RoomHeight { get => roomHeight; set => roomHeight = value; }
         public int MaximumGuests { get => maximumGuests; set => maximumGuests = value; }
         public bool PetsAllowed { get => petsAllowed; set => petsAllowed = value; }
-        internal RoomClass RoomClass { get => roomClass; set => roomClass = value; }
-        internal RoomFacilities RoomFacilities { get => roomFacilities; set => roomFacilities = value; }
+        public RoomClass RoomClass { get => roomClass; set => roomClass = value; }
+        public RoomFacilities RoomFacilities { get => roomFacilities; set => roomFacilities = value; }
 
         
         public HotelRoom(int roomCode, string roomName, RoomClass roomClass, bool isAvailable, double pricePerNight, double discountedPrice, int levelNumber, double roomLength, double roomHeight, int maximumGuests, bool petsAllowed, RoomFacilities roomFacilities)
