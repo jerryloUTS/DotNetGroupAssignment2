@@ -6,14 +6,32 @@ using System.Threading.Tasks;
 
 namespace HotelManagementSystem.Models
 {
-    internal class Customer
+    public class Customer
     {
-        public int Id { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string CreditCardNumber { get; set; }
-        public string PhoneNumber { get; set; }
-        public string EmailAddress { get; set; }
-        public Address Address { get; set; }
+        private int id;
+        private string name;
+        private string email;
+        private string phoneNumber;
+        private Address address;
+        private CreditCard? creditCardDetails;
+        private List<RoomBooking> roomBookings = new List<RoomBooking>();
+
+        public Customer(int id, string name, string email, string phoneNumber, Address address, CreditCard? creditCardDetails)
+        {
+            this.id = id;
+            this.name = name;
+            this.email = email;
+            this.phoneNumber = phoneNumber;
+            this.address = address;
+            this.creditCardDetails = creditCardDetails;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public string Name { get => name; set => name = value; }
+        public string Email { get => email; set => email = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public Address Address { get => address; set => address = value; }
+        public CreditCard? CreditCardDetails { get => creditCardDetails; set => creditCardDetails = value; }
+        public List<RoomBooking> RoomBookings { get => roomBookings; set => roomBookings = value; }
     }
 }
