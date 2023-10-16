@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnSubmit = new Button();
             groupBox1 = new GroupBox();
             txtPhone = new TextBox();
             label4 = new Label();
@@ -40,23 +40,31 @@
             label1 = new Label();
             panel1 = new Panel();
             groupBox2 = new GroupBox();
+            label7 = new Label();
+            cmbCountry = new ComboBox();
             txtAddressL2 = new TextBox();
             label6 = new Label();
             txtAdrressL1 = new TextBox();
             label5 = new Label();
+            label8 = new Label();
+            label9 = new Label();
+            txtPostCode = new TextBox();
+            label10 = new Label();
+            cmbCity = new ComboBox();
+            cmbState = new ComboBox();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // btnSubmit
             // 
-            button1.Location = new Point(278, 398);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnSubmit.Location = new Point(278, 398);
+            btnSubmit.Name = "btnSubmit";
+            btnSubmit.Size = new Size(94, 29);
+            btnSubmit.TabIndex = 0;
+            btnSubmit.Text = "Submit";
+            btnSubmit.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -153,16 +161,41 @@
             // 
             // groupBox2
             // 
+            groupBox2.Controls.Add(cmbState);
+            groupBox2.Controls.Add(cmbCity);
+            groupBox2.Controls.Add(label10);
+            groupBox2.Controls.Add(txtPostCode);
+            groupBox2.Controls.Add(label9);
+            groupBox2.Controls.Add(label8);
+            groupBox2.Controls.Add(label7);
+            groupBox2.Controls.Add(cmbCountry);
             groupBox2.Controls.Add(txtAddressL2);
             groupBox2.Controls.Add(label6);
             groupBox2.Controls.Add(txtAdrressL1);
             groupBox2.Controls.Add(label5);
             groupBox2.Location = new Point(18, 265);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(362, 167);
+            groupBox2.Size = new Size(362, 332);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Address Details";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(14, 115);
+            label7.Name = "label7";
+            label7.Size = new Size(60, 20);
+            label7.TabIndex = 5;
+            label7.Text = "Country";
+            // 
+            // cmbCountry
+            // 
+            cmbCountry.FormattingEnabled = true;
+            cmbCountry.Location = new Point(159, 115);
+            cmbCountry.Name = "cmbCountry";
+            cmbCountry.Size = new Size(183, 28);
+            cmbCountry.TabIndex = 4;
             // 
             // txtAddressL2
             // 
@@ -197,13 +230,63 @@
             label5.TabIndex = 0;
             label5.Text = "Address Line 1: *";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(17, 156);
+            label8.Name = "label8";
+            label8.Size = new Size(34, 20);
+            label8.TabIndex = 6;
+            label8.Text = "City";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(17, 219);
+            label9.Name = "label9";
+            label9.Size = new Size(43, 20);
+            label9.TabIndex = 7;
+            label9.Text = "State";
+            // 
+            // txtPostCode
+            // 
+            txtPostCode.Location = new Point(159, 261);
+            txtPostCode.Name = "txtPostCode";
+            txtPostCode.Size = new Size(183, 27);
+            txtPostCode.TabIndex = 8;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(18, 261);
+            label10.Name = "label10";
+            label10.Size = new Size(117, 20);
+            label10.TabIndex = 9;
+            label10.Text = "Postal/ZIP Code:";
+            // 
+            // cmbCity
+            // 
+            cmbCity.FormattingEnabled = true;
+            cmbCity.Location = new Point(159, 167);
+            cmbCity.Name = "cmbCity";
+            cmbCity.Size = new Size(183, 28);
+            cmbCity.TabIndex = 10;
+            // 
+            // cmbState
+            // 
+            cmbState.FormattingEnabled = true;
+            cmbState.Location = new Point(160, 216);
+            cmbState.Name = "cmbState";
+            cmbState.Size = new Size(183, 28);
+            cmbState.TabIndex = 11;
+            // 
             // AddCustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(439, 450);
             Controls.Add(panel1);
-            Controls.Add(button1);
+            Controls.Add(btnSubmit);
             Name = "AddCustomerForm";
             Text = "AddCustomerForm";
             groupBox1.ResumeLayout(false);
@@ -216,7 +299,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnSubmit;
         private GroupBox groupBox1;
         private Label label1;
         private Label label2;
@@ -232,5 +315,13 @@
         private Label label6;
         private TextBox txtAdrressL1;
         private TextBox txtAddressL2;
+        private ComboBox cmbCountry;
+        private Label label7;
+        private Label label10;
+        private TextBox txtPostCode;
+        private Label label9;
+        private Label label8;
+        private ComboBox cmbState;
+        private ComboBox cmbCity;
     }
 }

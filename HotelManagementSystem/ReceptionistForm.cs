@@ -20,8 +20,8 @@ namespace HotelManagementSystem
         private void button1_Click(object sender, EventArgs e)
         {
             AddCustomerForm addCustomerForm = new AddCustomerForm();
-            DialogResult dResult =  addCustomerForm.ShowDialog();
-            
+            DialogResult dResult = addCustomerForm.ShowDialog();
+
         }
     }
 }

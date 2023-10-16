@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            btnAddCustomer = new Button();
             SuspendLayout();
             // 
-            // button1
+            // btnAddCustomer
             // 
-            button1.Location = new Point(69, 362);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnAddCustomer.Location = new Point(62, 281);
+            btnAddCustomer.Name = "btnAddCustomer";
+            btnAddCustomer.Size = new Size(143, 29);
+            btnAddCustomer.TabIndex = 0;
+            btnAddCustomer.Text = "Add Customer";
+            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += button1_Click;
             // 
             // ReceptionistForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(btnAddCustomer);
             Name = "ReceptionistForm";
             Text = "ReceptionistForm";
             ResumeLayout(false);
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnAddCustomer;
     }
 }
