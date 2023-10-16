@@ -6,5 +6,12 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReceptionistForm frm = new ReceptionistForm();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

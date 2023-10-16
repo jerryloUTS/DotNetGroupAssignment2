@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem
 {
-    public partial class Receptionist : Form
+    public partial class ReceptionistForm : Form
     {
-        public Receptionist()
+        public ReceptionistForm()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm addCustomerForm = new AddCustomerForm();
+            DialogResult dResult =  addCustomerForm.ShowDialog();
+            
         }
     }
 }

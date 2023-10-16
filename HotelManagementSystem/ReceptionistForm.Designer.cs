@@ -1,6 +1,6 @@
 ﻿namespace HotelManagementSystem
 {
-    partial class Receptionist
+    partial class ReceptionistForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,44 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnAddCustomer = new Button();
-            lblReceptionistName = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
-            // btnAddCustomer
+            // button1
             // 
-            btnAddCustomer.Location = new Point(74, 257);
-            btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(183, 55);
-            btnAddCustomer.TabIndex = 0;
-            btnAddCustomer.Text = "Add Customer";
-            btnAddCustomer.UseVisualStyleBackColor = true;
+            button1.Location = new Point(69, 362);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 0;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
-            // lblReceptionistName
-            // 
-            lblReceptionistName.AutoSize = true;
-            lblReceptionistName.Location = new Point(88, 50);
-            lblReceptionistName.Name = "lblReceptionistName";
-            lblReceptionistName.Size = new Size(49, 20);
-            lblReceptionistName.TabIndex = 1;
-            lblReceptionistName.Text = "Hello ";
-            // 
-            // Receptionist
+            // ReceptionistForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(lblReceptionistName);
-            Controls.Add(btnAddCustomer);
-            Name = "Receptionist";
-            Text = "Receptionist";
+            Controls.Add(button1);
+            Name = "ReceptionistForm";
+            Text = "ReceptionistForm";
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Button btnAddCustomer;
-        private Label lblReceptionistName;
+        private Button button1;
     }
 }
