@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelManagementSystem.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,16 @@ namespace HotelManagementSystem
 {
     public partial class ReceptionistForm : Form
     {
-        public ReceptionistForm()
+        private HotelMain hotelMain;
+        public ReceptionistForm(HotelMain hotelMain)
         {
             InitializeComponent();
+            this.hotelMain = hotelMain;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AddCustomerForm addCustomerForm = new AddCustomerForm();
+            AddCustomerForm addCustomerForm = new AddCustomerForm(hotelMain);
             DialogResult dResult = addCustomerForm.ShowDialog();
 
         }

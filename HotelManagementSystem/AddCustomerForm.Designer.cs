@@ -39,8 +39,18 @@
             txtFname = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
+            gpCreditCard = new GroupBox();
+            label15 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dtpIssueDate = new DateTimePicker();
+            label14 = new Label();
+            label13 = new Label();
+            cmbCardIssuer = new ComboBox();
+            textBox3 = new TextBox();
+            label12 = new Label();
+            label11 = new Label();
+            textBox2 = new TextBox();
             groupBox2 = new GroupBox();
-            cmbState = new ComboBox();
             cmbCity = new ComboBox();
             label10 = new Label();
             txtPostCode = new TextBox();
@@ -52,22 +62,10 @@
             label6 = new Label();
             txtAdrressL1 = new TextBox();
             label5 = new Label();
-            gpCreditCard = new GroupBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            label11 = new Label();
-            label12 = new Label();
-            textBox3 = new TextBox();
-            cmbCardIssuer = new ComboBox();
-            label13 = new Label();
-            label14 = new Label();
-            dtpIssueDate = new DateTimePicker();
-            dateTimePicker1 = new DateTimePicker();
-            label15 = new Label();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
-            groupBox2.SuspendLayout();
             gpCreditCard.SuspendLayout();
+            groupBox2.SuspendLayout();
             SuspendLayout();
             // 
             // btnSubmit
@@ -78,6 +76,7 @@
             btnSubmit.TabIndex = 0;
             btnSubmit.Text = "Submit";
             btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.Click += btnSubmit_Click;
             // 
             // groupBox1
             // 
@@ -173,10 +172,110 @@
             panel1.Size = new Size(481, 345);
             panel1.TabIndex = 2;
             // 
+            // gpCreditCard
+            // 
+            gpCreditCard.Controls.Add(label15);
+            gpCreditCard.Controls.Add(dateTimePicker1);
+            gpCreditCard.Controls.Add(dtpIssueDate);
+            gpCreditCard.Controls.Add(label14);
+            gpCreditCard.Controls.Add(label13);
+            gpCreditCard.Controls.Add(cmbCardIssuer);
+            gpCreditCard.Controls.Add(textBox3);
+            gpCreditCard.Controls.Add(label12);
+            gpCreditCard.Controls.Add(label11);
+            gpCreditCard.Controls.Add(textBox2);
+            gpCreditCard.Location = new Point(18, 578);
+            gpCreditCard.Name = "gpCreditCard";
+            gpCreditCard.Size = new Size(420, 251);
+            gpCreditCard.TabIndex = 3;
+            gpCreditCard.TabStop = false;
+            gpCreditCard.Text = "Credit Card Details";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(17, 209);
+            label15.Name = "label15";
+            label15.Size = new Size(88, 20);
+            label15.TabIndex = 18;
+            label15.Text = "Expiry Date:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.CustomFormat = "";
+            dateTimePicker1.Location = new Point(159, 209);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(250, 27);
+            dateTimePicker1.TabIndex = 17;
+            // 
+            // dtpIssueDate
+            // 
+            dtpIssueDate.CustomFormat = "";
+            dtpIssueDate.Location = new Point(159, 164);
+            dtpIssueDate.Name = "dtpIssueDate";
+            dtpIssueDate.Size = new Size(250, 27);
+            dtpIssueDate.TabIndex = 16;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(17, 164);
+            label14.Name = "label14";
+            label14.Size = new Size(80, 20);
+            label14.TabIndex = 15;
+            label14.Text = "Issue Date:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(14, 115);
+            label13.Name = "label13";
+            label13.Size = new Size(84, 20);
+            label13.TabIndex = 14;
+            label13.Text = "Card Issuer:";
+            // 
+            // cmbCardIssuer
+            // 
+            cmbCardIssuer.FormattingEnabled = true;
+            cmbCardIssuer.Location = new Point(159, 115);
+            cmbCardIssuer.Name = "cmbCardIssuer";
+            cmbCardIssuer.Size = new Size(203, 28);
+            cmbCardIssuer.TabIndex = 13;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(159, 65);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(86, 27);
+            textBox3.TabIndex = 12;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(14, 72);
+            label12.Name = "label12";
+            label12.Size = new Size(39, 20);
+            label12.TabIndex = 11;
+            label12.Text = "CVC:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(14, 33);
+            label11.Name = "label11";
+            label11.Size = new Size(101, 20);
+            label11.TabIndex = 10;
+            label11.Text = "Card Number:";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(160, 26);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(203, 27);
+            textBox2.TabIndex = 9;
+            // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(textBox1);
-            groupBox2.Controls.Add(cmbState);
             groupBox2.Controls.Add(cmbCity);
             groupBox2.Controls.Add(label10);
             groupBox2.Controls.Add(txtPostCode);
@@ -194,14 +293,6 @@
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Address Details";
-            // 
-            // cmbState
-            // 
-            cmbState.FormattingEnabled = true;
-            cmbState.Location = new Point(160, 216);
-            cmbState.Name = "cmbState";
-            cmbState.Size = new Size(202, 28);
-            cmbState.TabIndex = 11;
             // 
             // cmbCity
             // 
@@ -295,115 +386,6 @@
             label5.TabIndex = 0;
             label5.Text = "Address Line 1: *";
             // 
-            // gpCreditCard
-            // 
-            gpCreditCard.Controls.Add(label15);
-            gpCreditCard.Controls.Add(dateTimePicker1);
-            gpCreditCard.Controls.Add(dtpIssueDate);
-            gpCreditCard.Controls.Add(label14);
-            gpCreditCard.Controls.Add(label13);
-            gpCreditCard.Controls.Add(cmbCardIssuer);
-            gpCreditCard.Controls.Add(textBox3);
-            gpCreditCard.Controls.Add(label12);
-            gpCreditCard.Controls.Add(label11);
-            gpCreditCard.Controls.Add(textBox2);
-            gpCreditCard.Location = new Point(18, 578);
-            gpCreditCard.Name = "gpCreditCard";
-            gpCreditCard.Size = new Size(420, 242);
-            gpCreditCard.TabIndex = 3;
-            gpCreditCard.TabStop = false;
-            gpCreditCard.Text = "Credit Card Details";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(87, 140);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(203, 27);
-            textBox1.TabIndex = 12;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(160, 26);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(203, 27);
-            textBox2.TabIndex = 9;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(14, 33);
-            label11.Name = "label11";
-            label11.Size = new Size(101, 20);
-            label11.TabIndex = 10;
-            label11.Text = "Card Number:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(14, 72);
-            label12.Name = "label12";
-            label12.Size = new Size(39, 20);
-            label12.TabIndex = 11;
-            label12.Text = "CVC:";
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(159, 65);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(86, 27);
-            textBox3.TabIndex = 12;
-            // 
-            // cmbCardIssuer
-            // 
-            cmbCardIssuer.FormattingEnabled = true;
-            cmbCardIssuer.Location = new Point(159, 115);
-            cmbCardIssuer.Name = "cmbCardIssuer";
-            cmbCardIssuer.Size = new Size(203, 28);
-            cmbCardIssuer.TabIndex = 13;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(14, 115);
-            label13.Name = "label13";
-            label13.Size = new Size(84, 20);
-            label13.TabIndex = 14;
-            label13.Text = "Card Issuer:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(17, 164);
-            label14.Name = "label14";
-            label14.Size = new Size(80, 20);
-            label14.TabIndex = 15;
-            label14.Text = "Issue Date:";
-            // 
-            // dtpIssueDate
-            // 
-            dtpIssueDate.CustomFormat = "";
-            dtpIssueDate.Location = new Point(159, 164);
-            dtpIssueDate.Name = "dtpIssueDate";
-            dtpIssueDate.Size = new Size(250, 27);
-            dtpIssueDate.TabIndex = 16;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.CustomFormat = "";
-            dateTimePicker1.Location = new Point(159, 209);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(250, 27);
-            dateTimePicker1.TabIndex = 17;
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(17, 209);
-            label15.Name = "label15";
-            label15.Size = new Size(88, 20);
-            label15.TabIndex = 18;
-            label15.Text = "Expiry Date:";
-            // 
             // AddCustomerForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -416,10 +398,10 @@
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             panel1.ResumeLayout(false);
-            groupBox2.ResumeLayout(false);
-            groupBox2.PerformLayout();
             gpCreditCard.ResumeLayout(false);
             gpCreditCard.PerformLayout();
+            groupBox2.ResumeLayout(false);
+            groupBox2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -447,12 +429,10 @@
         private TextBox txtPostCode;
         private Label label9;
         private Label label8;
-        private ComboBox cmbState;
         private ComboBox cmbCity;
         private GroupBox gpCreditCard;
         private Label label11;
         private TextBox textBox2;
-        private TextBox textBox1;
         private Label label13;
         private ComboBox cmbCardIssuer;
         private TextBox textBox3;
