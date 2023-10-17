@@ -33,24 +33,27 @@
             manageToolStripMenuItem = new ToolStripMenuItem();
             bookHotelRoomToolStripMenuItem = new ToolStripMenuItem();
             viewAllCustomersToolStripMenuItem = new ToolStripMenuItem();
+            reportIncidentToolStripMenuItem = new ToolStripMenuItem();
             foodToolStripMenuItem = new ToolStripMenuItem();
             viewMenuToolStripMenuItem = new ToolStripMenuItem();
-            reportIncidentToolStripMenuItem = new ToolStripMenuItem();
             btnBook = new Button();
-            dataGridView1 = new DataGridView();
+            lbCustomers = new ListBox();
+            lbRooms = new ListBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
             menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.Location = new Point(62, 281);
+            btnAddCustomer.Location = new Point(34, 311);
             btnAddCustomer.Name = "btnAddCustomer";
             btnAddCustomer.Size = new Size(143, 29);
             btnAddCustomer.TabIndex = 0;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
-            btnAddCustomer.Click += button1_Click;
+            btnAddCustomer.Click += btnAddCustomer_Click;
             // 
             // menuStrip1
             // 
@@ -72,14 +75,20 @@
             // bookHotelRoomToolStripMenuItem
             // 
             bookHotelRoomToolStripMenuItem.Name = "bookHotelRoomToolStripMenuItem";
-            bookHotelRoomToolStripMenuItem.Size = new Size(224, 26);
+            bookHotelRoomToolStripMenuItem.Size = new Size(219, 26);
             bookHotelRoomToolStripMenuItem.Text = "Book Hotel Room";
             // 
             // viewAllCustomersToolStripMenuItem
             // 
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            viewAllCustomersToolStripMenuItem.Size = new Size(224, 26);
+            viewAllCustomersToolStripMenuItem.Size = new Size(219, 26);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
+            // 
+            // reportIncidentToolStripMenuItem
+            // 
+            reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
+            reportIncidentToolStripMenuItem.Size = new Size(219, 26);
+            reportIncidentToolStripMenuItem.Text = "Report Incident";
             // 
             // foodToolStripMenuItem
             // 
@@ -91,49 +100,85 @@
             // viewMenuToolStripMenuItem
             // 
             viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
-            viewMenuToolStripMenuItem.Size = new Size(224, 26);
+            viewMenuToolStripMenuItem.Size = new Size(165, 26);
             viewMenuToolStripMenuItem.Text = "View Menu";
-            // 
-            // reportIncidentToolStripMenuItem
-            // 
-            reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
-            reportIncidentToolStripMenuItem.Size = new Size(224, 26);
-            reportIncidentToolStripMenuItem.Text = "Report Incident";
             // 
             // btnBook
             // 
-            btnBook.Location = new Point(43, 166);
+            btnBook.Location = new Point(526, 391);
             btnBook.Name = "btnBook";
             btnBook.Size = new Size(131, 29);
             btnBook.TabIndex = 2;
             btnBook.Text = "Book a Room";
             btnBook.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // lbCustomers
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(349, 88);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(300, 188);
-            dataGridView1.TabIndex = 3;
+            lbCustomers.FormattingEnabled = true;
+            lbCustomers.ItemHeight = 20;
+            lbCustomers.Location = new Point(255, 162);
+            lbCustomers.Name = "lbCustomers";
+            lbCustomers.Size = new Size(213, 204);
+            lbCustomers.TabIndex = 3;
+            lbCustomers.SelectedIndexChanged += lbCustomers_SelectedIndexChanged;
+            // 
+            // lbRooms
+            // 
+            lbRooms.FormattingEnabled = true;
+            lbRooms.ItemHeight = 20;
+            lbRooms.Location = new Point(526, 162);
+            lbRooms.Name = "lbRooms";
+            lbRooms.Size = new Size(210, 204);
+            lbRooms.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 5;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(255, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(128, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Select a Customer";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(526, 51);
+            label3.Name = "label3";
+            label3.Size = new Size(105, 20);
+            label3.TabIndex = 7;
+            label3.Text = "Select a Room";
+            label3.TextAlign = ContentAlignment.TopCenter;
             // 
             // ReceptionistForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(dataGridView1);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(lbRooms);
+            Controls.Add(lbCustomers);
             Controls.Add(btnBook);
             Controls.Add(btnAddCustomer);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "ReceptionistForm";
             Text = "ReceptionistForm";
+            Load += ReceptionistForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,6 +194,10 @@
         private ToolStripMenuItem viewMenuToolStripMenuItem;
         private ToolStripMenuItem reportIncidentToolStripMenuItem;
         private Button btnBook;
-        private DataGridView dataGridView1;
+        private ListBox lbCustomers;
+        private ListBox lbRooms;
+        private Label label1;
+        private Label label2;
+        private Label label3;
     }
 }

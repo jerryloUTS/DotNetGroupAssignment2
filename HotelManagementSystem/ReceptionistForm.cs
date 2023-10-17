@@ -20,11 +20,29 @@ namespace HotelManagementSystem
             this.hotelMain = hotelMain;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomerForm addCustomerForm = new AddCustomerForm(hotelMain);
             DialogResult dResult = addCustomerForm.ShowDialog();
 
+        }
+
+
+
+        private void lbCustomers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReceptionistForm_Load(object sender, EventArgs e)
+        {
+
+
+            //adds the customers to the listbox
+            foreach(Customer customer in hotelMain.Customers)
+            {
+                lbCustomers.Items.Add(customer);
+            }
         }
     }
 }
