@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HotelManagementSystem
 {
-    public partial class Receptionist : Form
+    public partial class BookRoomForm : Form
     {
-        public Receptionist()
+        public BookRoomForm()
         {
             InitializeComponent();
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

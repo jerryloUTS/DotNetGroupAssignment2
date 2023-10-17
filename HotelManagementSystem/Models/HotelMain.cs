@@ -22,9 +22,49 @@ namespace HotelManagementSystem.Models
             this.receptionists = new List<Receptionist>();
         }
 
-        public List<Customer> Customers { get => customers; set => customers = value; }
-        public List<Receptionist> Receptionists { get => receptionists; set => receptionists = value; }
-        public List<Admin> Admins { get => admins; set => admins = value; }
-        internal List<HotelRoom> Rooms { get => rooms; set => rooms = value; }
+        public List<Customer> Customers 
+        { 
+            get => customers; 
+            set => customers = value; 
+        }
+        public List<Receptionist> Receptionists 
+        { 
+            get => receptionists; 
+            set => receptionists = value;
+        }
+        public List<Admin> Admins 
+        { 
+            get => admins; 
+            set => admins = value; 
+        }
+        public List<HotelRoom> Rooms 
+        {
+            get => rooms; 
+            set => rooms = value;
+        }
+
+        public void Addcustomer(Customer customer)
+        {
+            this.customers.Add(customer);
+        }
+
+        public void Removecustomer(Customer customer)
+        {
+            this.customers.Remove(customer);
+        }
+
+        public Customer GetCustomer(int id) 
+        { 
+            foreach (Customer customer in this.customers)
+            {
+                if (customer.Id == id)
+                {
+                    return customer;
+                }
+            }
+            throw new ArgumentOutOfRangeException();
+        }
+
     }
+    
 }
