@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -65,6 +66,15 @@ namespace HotelManagementSystem.Models
             throw new ArgumentOutOfRangeException();
         }
 
+        //this will be used for testing
+        public void printAllCustomers()
+        {
+            foreach(Customer customer in this.customers)
+            {
+                Debug.WriteLine(customer.FirstName + " " + customer.LastName);
+            }
+        }
+
     }
-    
+
 }
