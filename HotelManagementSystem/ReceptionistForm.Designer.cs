@@ -111,6 +111,7 @@
             btnBook.TabIndex = 2;
             btnBook.Text = "Book a Room";
             btnBook.UseVisualStyleBackColor = true;
+            btnBook.Click += btnBook_Click;
             // 
             // lbCustomers
             // 

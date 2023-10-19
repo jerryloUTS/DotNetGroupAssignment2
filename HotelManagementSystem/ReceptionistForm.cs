@@ -13,6 +13,8 @@ namespace HotelManagementSystem
 {
     public partial class ReceptionistForm : Form
     {
+        //this is a data table that will be used to display custoemr infomration.
+        private DataTable customerDataTable = new DataTable();
         private HotelMain hotelMain;
         public ReceptionistForm(HotelMain hotelMain)
         {
@@ -36,13 +38,44 @@ namespace HotelManagementSystem
 
         private void ReceptionistForm_Load(object sender, EventArgs e)
         {
+            //loads the customer data from memory to the table
+            AddCustomersToDataTable();
+        }
 
+        private void btnBook_Click(object sender, EventArgs e)
+        {
 
-            //adds the customers to the listbox
+        }
+
+        private void AddCustomersToDataTable()
+        {
+            AddColumns();
+            AddCustomerData();
+        }
+
+        private void AddColumns()
+        {
+            DataColumn custIdCol = new DataColumn();
+            custIdCol.ColumnName = "id";
+            DataColumn custNameCol = new DataColumn();
+            custNameCol.ColumnName = "name";
+
+            //adds the column headers
+            customerDataTable.Columns.Add(custIdCol);
+            customerDataTable.Columns.Add(custNameCol);
+            
+        }
+
+        private void AddCustomerData()
+        {
             foreach(Customer customer in hotelMain.Customers)
             {
-                lbCustomers.Items.Add(customer);
+                var row = customerDataTable.NewRow();
+                row["id"] = customer.Id;
+                row["name"] = customer.FirstName + " " + customer.LastName;
+                customerDataTable.Rows.Add(row);
             }
+
         }
     }
 }

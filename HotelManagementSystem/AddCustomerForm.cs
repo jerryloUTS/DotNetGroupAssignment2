@@ -14,6 +14,7 @@ namespace HotelManagementSystem
     public partial class AddCustomerForm : Form
     {
         private HotelMain hotelMain;
+
         public AddCustomerForm(HotelMain hotelMain)
         {
             InitializeComponent();
