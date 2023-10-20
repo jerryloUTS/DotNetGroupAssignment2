@@ -20,12 +20,18 @@ namespace HotelManagementSystem
         {
             InitializeComponent();
             this.hotelMain = hotelMain;
+            
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             AddCustomerForm addCustomerForm = new AddCustomerForm(hotelMain);
             DialogResult dResult = addCustomerForm.ShowDialog();
+            if (dResult == DialogResult.OK)         
+            {
+                //refreshes the datatable
+                this.Refresh();
+            }
 
         }
 
@@ -50,9 +56,17 @@ namespace HotelManagementSystem
         private void AddCustomersToDataTable()
         {
             AddColumns();
-            AddCustomerData();
+            AddCustomerDataFromDB();
+            RefreshCustomerList();
+            
         }
 
+        private void RefreshCustomerList()
+        {
+            lbCustomers.DataSource = customerDataTable;
+            lbCustomers.DisplayMember = "name";
+            //lbCustomers.ValueMember = "id";
+        }
         private void AddColumns()
         {
             DataColumn custIdCol = new DataColumn();
@@ -66,7 +80,7 @@ namespace HotelManagementSystem
             
         }
 
-        private void AddCustomerData()
+        private void AddCustomerDataFromDB()
         {
             foreach(Customer customer in hotelMain.Customers)
             {

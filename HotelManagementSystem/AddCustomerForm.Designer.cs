@@ -51,6 +51,7 @@
             label11 = new Label();
             txtCardNumber = new TextBox();
             groupBox2 = new GroupBox();
+            cmbState = new ComboBox();
             cmbCity = new ComboBox();
             label10 = new Label();
             txtPostCode = new TextBox();
@@ -62,7 +63,6 @@
             label6 = new Label();
             txtAdrressL1 = new TextBox();
             label5 = new Label();
-            cmbState = new ComboBox();
             groupBox1.SuspendLayout();
             panel1.SuspendLayout();
             gpCreditCard.SuspendLayout();
@@ -71,6 +71,7 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.DialogResult = DialogResult.OK;
             btnSubmit.Location = new Point(356, 408);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(94, 29);
@@ -298,6 +299,14 @@
             groupBox2.TabStop = false;
             groupBox2.Text = "Address Details";
             // 
+            // cmbState
+            // 
+            cmbState.FormattingEnabled = true;
+            cmbState.Location = new Point(159, 216);
+            cmbState.Name = "cmbState";
+            cmbState.Size = new Size(204, 28);
+            cmbState.TabIndex = 11;
+            // 
             // cmbCity
             // 
             cmbCity.FormattingEnabled = true;
@@ -389,14 +398,6 @@
             label5.Size = new Size(118, 20);
             label5.TabIndex = 0;
             label5.Text = "Address Line 1: *";
-            // 
-            // cmbState
-            // 
-            cmbState.FormattingEnabled = true;
-            cmbState.Location = new Point(159, 216);
-            cmbState.Name = "cmbState";
-            cmbState.Size = new Size(204, 28);
-            cmbState.TabIndex = 11;
             // 
             // AddCustomerForm
             // 
