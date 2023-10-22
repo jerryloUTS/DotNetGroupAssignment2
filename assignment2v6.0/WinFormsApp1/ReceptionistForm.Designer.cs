@@ -1,0 +1,204 @@
+﻿namespace assignment2
+{
+    partial class ReceptionistForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            btnAddCustomer = new Button();
+            menuStrip1 = new MenuStrip();
+            manageToolStripMenuItem = new ToolStripMenuItem();
+            bookHotelRoomToolStripMenuItem = new ToolStripMenuItem();
+            viewAllCustomersToolStripMenuItem = new ToolStripMenuItem();
+            reportIncidentToolStripMenuItem = new ToolStripMenuItem();
+            foodToolStripMenuItem = new ToolStripMenuItem();
+            viewMenuToolStripMenuItem = new ToolStripMenuItem();
+            btnBook = new Button();
+            lbCustomers = new ListBox();
+            lbRooms = new ListBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // btnAddCustomer
+            // 
+            btnAddCustomer.Location = new Point(34, 311);
+            btnAddCustomer.Name = "btnAddCustomer";
+            btnAddCustomer.Size = new Size(143, 29);
+            btnAddCustomer.TabIndex = 0;
+            btnAddCustomer.Text = "Add Customer";
+            btnAddCustomer.UseVisualStyleBackColor = true;
+            btnAddCustomer.Click += btnAddCustomer_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, foodToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.TabIndex = 1;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // manageToolStripMenuItem
+            // 
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookHotelRoomToolStripMenuItem, viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem });
+            manageToolStripMenuItem.Name = "manageToolStripMenuItem";
+            manageToolStripMenuItem.Size = new Size(77, 24);
+            manageToolStripMenuItem.Text = "Manage";
+            // 
+            // bookHotelRoomToolStripMenuItem
+            // 
+            bookHotelRoomToolStripMenuItem.Name = "bookHotelRoomToolStripMenuItem";
+            bookHotelRoomToolStripMenuItem.Size = new Size(219, 26);
+            bookHotelRoomToolStripMenuItem.Text = "Book Hotel Room";
+            // 
+            // viewAllCustomersToolStripMenuItem
+            // 
+            viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
+            viewAllCustomersToolStripMenuItem.Size = new Size(219, 26);
+            viewAllCustomersToolStripMenuItem.Text = "View All Customers";
+            // 
+            // reportIncidentToolStripMenuItem
+            // 
+            reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
+            reportIncidentToolStripMenuItem.Size = new Size(219, 26);
+            reportIncidentToolStripMenuItem.Text = "Report Incident";
+            // 
+            // foodToolStripMenuItem
+            // 
+            foodToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewMenuToolStripMenuItem });
+            foodToolStripMenuItem.Name = "foodToolStripMenuItem";
+            foodToolStripMenuItem.Size = new Size(57, 24);
+            foodToolStripMenuItem.Text = "Food";
+            // 
+            // viewMenuToolStripMenuItem
+            // 
+            viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
+            viewMenuToolStripMenuItem.Size = new Size(165, 26);
+            viewMenuToolStripMenuItem.Text = "View Menu";
+            // 
+            // btnBook
+            // 
+            btnBook.Location = new Point(526, 391);
+            btnBook.Name = "btnBook";
+            btnBook.Size = new Size(131, 29);
+            btnBook.TabIndex = 2;
+            btnBook.Text = "Book a Room";
+            btnBook.UseVisualStyleBackColor = true;
+            btnBook.Click += btnBook_Click;
+            // 
+            // lbCustomers
+            // 
+            lbCustomers.FormattingEnabled = true;
+            lbCustomers.ItemHeight = 20;
+            lbCustomers.Location = new Point(255, 162);
+            lbCustomers.Name = "lbCustomers";
+            lbCustomers.Size = new Size(213, 204);
+            lbCustomers.TabIndex = 3;
+            lbCustomers.SelectedIndexChanged += lbCustomers_SelectedIndexChanged;
+            // 
+            // lbRooms
+            // 
+            lbRooms.FormattingEnabled = true;
+            lbRooms.ItemHeight = 20;
+            lbRooms.Location = new Point(526, 162);
+            lbRooms.Name = "lbRooms";
+            lbRooms.Size = new Size(210, 204);
+            lbRooms.TabIndex = 4;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(19, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(50, 20);
+            label1.TabIndex = 5;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(255, 41);
+            label2.Name = "label2";
+            label2.Size = new Size(128, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Select a Customer";
+            label2.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(526, 51);
+            label3.Name = "label3";
+            label3.Size = new Size(105, 20);
+            label3.TabIndex = 7;
+            label3.Text = "Select a Room";
+            label3.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // ReceptionistForm
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(lbRooms);
+            Controls.Add(lbCustomers);
+            Controls.Add(btnBook);
+            Controls.Add(btnAddCustomer);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "ReceptionistForm";
+            Text = "ReceptionistForm";
+            Load += ReceptionistForm_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private Button btnAddCustomer;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem manageToolStripMenuItem;
+        private ToolStripMenuItem bookHotelRoomToolStripMenuItem;
+        private ToolStripMenuItem viewAllCustomersToolStripMenuItem;
+        private ToolStripMenuItem foodToolStripMenuItem;
+        private ToolStripMenuItem viewMenuToolStripMenuItem;
+        private ToolStripMenuItem reportIncidentToolStripMenuItem;
+        private Button btnBook;
+        private ListBox lbCustomers;
+        private ListBox lbRooms;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+    }
+}
