@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelManagementSystem.Models
+namespace assignment2
 {
     public class RoomBooking
     {
