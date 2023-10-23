@@ -1,4 +1,4 @@
-﻿namespace HotelManagementSystem
+﻿namespace assignment2
 {
     partial class ReceptionistForm
     {

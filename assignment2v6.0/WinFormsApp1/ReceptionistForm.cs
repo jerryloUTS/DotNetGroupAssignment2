@@ -1,5 +1,4 @@
-﻿using HotelManagementSystem.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,23 +8,23 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HotelManagementSystem
+namespace assignment2
 {
     public partial class ReceptionistForm : Form
     {
         //this is a data table that will be used to display custoemr infomration.
         private DataTable customerDataTable = new DataTable();
-        private HotelMain hotelMain;
-        public ReceptionistForm(HotelMain hotelMain)
+        private LoginForm loginForm; //passes login information from the logged in user.
+        public ReceptionistForm(LoginForm loginForm)
         {
             InitializeComponent();
-            this.hotelMain = hotelMain;
+            this.loginForm = loginForm;
             
         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            AddCustomerForm addCustomerForm = new AddCustomerForm(hotelMain);
+            NewCustomerForm addCustomerForm = new NewCustomerForm(loginForm);
             DialogResult dResult = addCustomerForm.ShowDialog();
             if (dResult == DialogResult.OK)         
             {
@@ -82,13 +81,13 @@ namespace HotelManagementSystem
 
         private void AddCustomerDataFromDB()
         {
-            foreach(Customer customer in hotelMain.Customers)
+            /*foreach(Customer customer in hotelMain.Customers)
             {
                 var row = customerDataTable.NewRow();
                 row["id"] = customer.Id;
                 row["name"] = customer.FirstName + " " + customer.LastName;
                 customerDataTable.Rows.Add(row);
-            }
+            }*/
 
         }
     }
