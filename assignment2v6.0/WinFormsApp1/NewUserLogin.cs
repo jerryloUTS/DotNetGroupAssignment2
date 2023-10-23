@@ -20,8 +20,7 @@ namespace assignment2
             InitializeComponent();
             this.loginform = loginform;
         }
-        
-        
+
         public Boolean isFormComplete()
         {
             if (String.IsNullOrEmpty(userTxtBox.Text))
@@ -80,7 +79,7 @@ namespace assignment2
             {
                 string address = addressTxtBox.Text + " " + cityTxtBox.Text + " " + stateComboBox.Text;
                 User user = new User(userTxtBox.Text, passTxtBox.Text, fNameTxtBox.Text, surnameTxtBox.Text, emailTxtBox.Text, phoneTxtBox.Text, address, dobPicker.Text);
-                string userInfo = ("Name: " + fNameTxtBox.Text + " " + surnameTxtBox.Text + "\nEmail: " + emailTxtBox.Text + "\nPhone: " + phoneTxtBox.Text + "\nAddress: " + address + "\nDate of Birth: " + dobPicker.Text + "\nRole: Customer");
+                string userInfo = (fNameTxtBox.Text + " " + surnameTxtBox.Text + "|" + emailTxtBox.Text + "|" + phoneTxtBox.Text + "|" + address + "|" + dobPicker.Text + "|Role: Customer");
                 MessageBox.Show("Account has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 File.AppendAllText("customerDB.txt", fNameTxtBox.Text + " " + surnameTxtBox.Text + "\n");
                 File.WriteAllText(userTxtBox.Text + ".txt", userInfo);

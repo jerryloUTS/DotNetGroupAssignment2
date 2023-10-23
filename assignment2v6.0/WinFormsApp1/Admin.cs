@@ -153,10 +153,10 @@ namespace assignment2
             f1.Show();
         }
 
-        private void btnAddEmployee_Click(object sender, EventArgs e)
+        private void viewComplaints_Click(object sender, EventArgs e)
         {
-            Form3 newEmployee = new Form3();
-            newEmployee.Show();
+            viewIncidents f1 = new viewIncidents();
+            f1.Show();
         }
     }
 }

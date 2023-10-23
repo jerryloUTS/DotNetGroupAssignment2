@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
-using HotelManagementSystem.Models;
 
 namespace assignment2
 {
@@ -56,11 +55,12 @@ namespace assignment2
                             new Admin(this, username).Show();
                             loggedin = true;
                         }
-                        else if (!(temp[0] == userTxtBx.Text && temp[1] == PassTxtbox.Text))
+                        else if (temp[0] == userTxtBx.Text && temp[1] != PassTxtbox.Text)
                         {
-                            //return false;
+                            MessageBox.Show("Incorrect credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            loggedin = false;
                         }
-
+                        
                         else if (!System.IO.File.Exists(userTxtBx.Text + ".txt"))
                         {
                             MessageBox.Show("Incorrect credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -83,9 +83,10 @@ namespace assignment2
                                 new Customer(this, username).Show();
                                 loggedin = true;
                             }
-                            else
+                            else if (temp[0] == userTxtBx.Text && temp[1] != PassTxtbox.Text)
                             {
-                                //return false;
+                                MessageBox.Show("Incorrect credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                loggedin = false;
                             }
                         }
                         else if (!System.IO.File.Exists(userTxtBx.Text + ".txt"))
@@ -110,9 +111,10 @@ namespace assignment2
                                 new Receptionist(this, username).Show();
                                 loggedin = true;
                             }
-                            else
+                            else if (temp[0] == userTxtBx.Text && temp[1] != PassTxtbox.Text)
                             {
-                                //return false;
+                                MessageBox.Show("Incorrect credentials", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                loggedin = false;
                             }
                         }
                         else if (!System.IO.File.Exists(userTxtBx.Text + ".txt"))
@@ -122,13 +124,13 @@ namespace assignment2
                         }
                     }
                 }
-
+                
             }
             if (!File.Exists(userTxtBx.Text + ".txt"))
-            {
-                MessageBox.Show("User does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                loggedin = false;
-            }
+                {
+                    MessageBox.Show("User does not exist.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    loggedin = false;
+                }
         }
         private void label1_Click(object sender, EventArgs e)
         {
@@ -158,12 +160,6 @@ namespace assignment2
         private void passwordLbl_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            ReceptionistForm f1 = new ReceptionistForm(this);
-            f1.Show();
         }
     }
 }

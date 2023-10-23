@@ -19,9 +19,15 @@ namespace assignment2
             this.loginform = loginform;
         }
 
-        private void Customer_Load(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void reportButton_Click(object sender, EventArgs e)
+        {
+            IncidentReport incidentReportForm = new IncidentReport();
+            incidentReportForm.Show();
         }
     }
 }
