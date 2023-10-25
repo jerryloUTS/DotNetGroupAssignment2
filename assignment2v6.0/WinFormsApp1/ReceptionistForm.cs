@@ -69,26 +69,27 @@ namespace assignment2
         }
         private void AddColumns()
         {
-            DataColumn custIdCol = new DataColumn();
-            custIdCol.ColumnName = "id";
+            DataColumn custUserNameCol = new DataColumn();
+            custUserNameCol.ColumnName = "username";
             DataColumn custNameCol = new DataColumn();
             custNameCol.ColumnName = "name";
 
             //adds the column headers
-            customerDataTable.Columns.Add(custIdCol);
+            customerDataTable.Columns.Add(custUserNameCol);
             customerDataTable.Columns.Add(custNameCol);
 
         }
 
         private void AddCustomerDataFromDB()
         {
-            /*foreach(Customer customer in hotelMain.Customers)
+            foreach(string line in File.ReadAllLines("customerDB.txt"))
             {
+                string[] splits = line.Split(",");
                 var row = customerDataTable.NewRow();
-                row["id"] = customer.Id;
-                row["name"] = customer.FirstName + " " + customer.LastName;
+                row["username"] = splits[1]; // customer username
+                row["name"] = splits[0];
                 customerDataTable.Rows.Add(row);
-            }*/
+            }
 
         }
 
