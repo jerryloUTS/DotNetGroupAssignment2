@@ -81,7 +81,7 @@ namespace assignment2
                 User user = new User(userTxtBox.Text, passTxtBox.Text, fNameTxtBox.Text, surnameTxtBox.Text, emailTxtBox.Text, phoneTxtBox.Text, address, dobPicker.Text);
                 string userInfo = (fNameTxtBox.Text + " " + surnameTxtBox.Text + "|" + emailTxtBox.Text + "|" + phoneTxtBox.Text + "|" + address + "|" + dobPicker.Text + "|Role: Customer");
                 MessageBox.Show("Account has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                File.AppendAllText("customerDB.txt", fNameTxtBox.Text + " " + surnameTxtBox.Text + "\n");
+                File.AppendAllText("customerDB.txt", fNameTxtBox.Text + " " + surnameTxtBox.Text + "," + userTxtBox.Text + "\n");
                 File.WriteAllText(userTxtBox.Text + ".txt", userInfo);
                 Close();
                 loginform.Show();

@@ -21,7 +21,7 @@ namespace assignment2
             InitializeComponent();
             this.loginForm = loginForm;
             this.username = username;
-         }
+        }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
@@ -96,6 +96,18 @@ namespace assignment2
         {
             IncidentReport incidentReportForm = new IncidentReport();
             incidentReportForm.Show();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            LoginForm login = new LoginForm();
+            login.Show();
         }
     }
 }
