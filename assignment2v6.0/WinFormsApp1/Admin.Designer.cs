@@ -43,8 +43,11 @@
             AddDishBtn = new Button();
             button2 = new Button();
             groupBox1 = new GroupBox();
-            button1 = new Button();
+            AddEmployeeButton = new Button();
+            button4 = new Button();
+            button3 = new Button();
             viewComplaints = new Button();
+            button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -88,7 +91,7 @@
             // DeleteCustomerBtn
             // 
             DeleteCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DeleteCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteCustomerBtn.Location = new Point(219, 224);
             DeleteCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             DeleteCustomerBtn.Name = "DeleteCustomerBtn";
@@ -114,7 +117,7 @@
             // AllCustomerBtn
             // 
             AllCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AllCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            AllCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             AllCustomerBtn.Location = new Point(78, 224);
             AllCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             AllCustomerBtn.Name = "AllCustomerBtn";
@@ -127,7 +130,7 @@
             // SearchCustomerBtn
             // 
             SearchCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SearchCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            SearchCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             SearchCustomerBtn.Location = new Point(361, 224);
             SearchCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             SearchCustomerBtn.Name = "SearchCustomerBtn";
@@ -226,6 +229,9 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            groupBox1.Controls.Add(AddEmployeeButton);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(viewComplaints);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label4);
@@ -251,6 +257,51 @@
             groupBox1.Text = "Admin Menu";
             groupBox1.Enter += groupBox1_Enter;
             // 
+            // AddEmployeeButton
+            // 
+            AddEmployeeButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            AddEmployeeButton.Location = new Point(438, 643);
+            AddEmployeeButton.Margin = new Padding(4, 5, 4, 5);
+            AddEmployeeButton.Name = "AddEmployeeButton";
+            AddEmployeeButton.Size = new Size(140, 38);
+            AddEmployeeButton.TabIndex = 62;
+            AddEmployeeButton.Text = "Add Receptionist";
+            AddEmployeeButton.UseVisualStyleBackColor = true;
+            AddEmployeeButton.Click += AddEmployeeButton_Click;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button4.Location = new Point(444, 643);
+            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Name = "button4";
+            button4.Size = new Size(0, 38);
+            button4.TabIndex = 61;
+            button4.Text = "Add Room";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button3.Location = new Point(222, 326);
+            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Name = "button3";
+            button3.Size = new Size(0, 38);
+            button3.TabIndex = 60;
+            button3.Text = "Add Room";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // viewComplaints
+            // 
+            viewComplaints.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point);
+            viewComplaints.Location = new Point(219, 270);
+            viewComplaints.Name = "viewComplaints";
+            viewComplaints.Size = new Size(140, 37);
+            viewComplaints.TabIndex = 59;
+            viewComplaints.Text = "View Customer Complaints";
+            viewComplaints.UseVisualStyleBackColor = true;
+            viewComplaints.Click += viewComplaints_Click;
+            // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -263,17 +314,6 @@
             button1.Text = "Delete Dish";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
-            // 
-            // viewComplaints
-            // 
-            viewComplaints.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point);
-            viewComplaints.Location = new Point(219, 270);
-            viewComplaints.Name = "viewComplaints";
-            viewComplaints.Size = new Size(140, 37);
-            viewComplaints.TabIndex = 59;
-            viewComplaints.Text = "View Customer Complaints";
-            viewComplaints.UseVisualStyleBackColor = true;
-            viewComplaints.Click += viewComplaints_Click;
             // 
             // Admin
             // 
@@ -310,5 +350,8 @@
         private GroupBox groupBox1;
         private Button button1;
         private Button viewComplaints;
+        private Button button3;
+        private Button AddEmployeeButton;
+        private Button button4;
     }
 }

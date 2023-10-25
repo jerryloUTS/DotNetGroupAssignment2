@@ -158,5 +158,11 @@ namespace assignment2
             viewIncidents f1 = new viewIncidents();
             f1.Show();
         }
+
+        private void AddEmployeeButton_Click(object sender, EventArgs e)
+        {
+            AddEmployee f1 = new AddEmployee();
+            f1.Show();
+        }
     }
 }

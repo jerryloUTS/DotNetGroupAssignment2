@@ -14,19 +14,20 @@ namespace assignment2
     {
         //this is a data table that will be used to display custoemr infomration.
         private DataTable customerDataTable = new DataTable();
+        private string username;
         private LoginForm loginForm; //passes login information from the logged in user.
-        public ReceptionistForm(LoginForm loginForm)
+        public ReceptionistForm(LoginForm loginForm, string username)
         {
             InitializeComponent();
             this.loginForm = loginForm;
-            
-        }
+            this.username = username;
+         }
 
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
             NewCustomerForm addCustomerForm = new NewCustomerForm(loginForm);
             DialogResult dResult = addCustomerForm.ShowDialog();
-            if (dResult == DialogResult.OK)         
+            if (dResult == DialogResult.OK)
             {
                 //refreshes the datatable
                 this.Refresh();
@@ -57,7 +58,7 @@ namespace assignment2
             AddColumns();
             AddCustomerDataFromDB();
             RefreshCustomerList();
-            
+
         }
 
         private void RefreshCustomerList()
@@ -76,7 +77,7 @@ namespace assignment2
             //adds the column headers
             customerDataTable.Columns.Add(custIdCol);
             customerDataTable.Columns.Add(custNameCol);
-            
+
         }
 
         private void AddCustomerDataFromDB()
@@ -89,6 +90,12 @@ namespace assignment2
                 customerDataTable.Rows.Add(row);
             }*/
 
+        }
+
+        private void reportIncidentToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IncidentReport incidentReportForm = new IncidentReport();
+            incidentReportForm.Show();
         }
     }
 }

@@ -32,12 +32,11 @@ namespace assignment2
         private void viewIncidents_Load(object sender, EventArgs e)
         {
             // Directory where the incident report text files are stored
-            string reportsDirectory = "E:\\Uni\\app dev with .net\\assignment2v6.0_v2\\WinFormsApp1\\bin\\Debug\\net6.0-windows"; // Update with the actual directory path
+            string reportsDirectory = Path.Combine(Directory.GetCurrentDirectory());
 
-            // Clear any existing items in the ComboBox
             comboBoxRoomNumbers.Items.Clear();
 
-            // Get a list of text files in the directory that end with "_report.txt"
+            // Gets list of text files in the directory that end with "_report.txt"
             string[] reportFiles = Directory.GetFiles(reportsDirectory, "*_report.txt");
 
             foreach (string reportFile in reportFiles)
@@ -57,7 +56,15 @@ namespace assignment2
             if (comboBoxRoomNumbers.SelectedItem != null)
             {
                 int selectedRoomNumber = (int)comboBoxRoomNumbers.SelectedItem;
-                string filePath = Path.Combine("E:\\Uni\\app dev with .net\\assignment2v6.0_v2\\WinFormsApp1\\bin\\Debug\\net6.0-windows", $"{selectedRoomNumber}_report.txt");
+
+                // Get the directory
+                string appDirectory = Application.StartupPath;
+
+                // relative path
+                string relativeFilePath = $"{selectedRoomNumber}_report.txt";
+
+                // Combine the app directory with the relative file path
+                string filePath = Path.Combine(appDirectory, relativeFilePath);
 
                 if (File.Exists(filePath))
                 {
