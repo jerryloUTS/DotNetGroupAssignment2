@@ -14,6 +14,7 @@ namespace assignment2
     {
         //this is a data table that will be used to display custoemr infomration.
         private DataTable customerDataTable = new DataTable();
+        private DataTable roomsDataTable = new DataTable();
         private string username;
         private LoginForm loginForm; //passes login information from the logged in user.
         public ReceptionistForm(LoginForm loginForm, string username)
@@ -53,6 +54,17 @@ namespace assignment2
 
         }
 
+        private void AddRoomCols()
+        {
+            DataColumn roomCodeCol = new DataColumn();
+            roomCodeCol.ColumnName = "code";
+            DataColumn roomDisplayTextCol = new DataColumn();
+            roomDisplayTextCol.ColumnName = "name";
+            roomsDataTable.Columns.Add(roomCodeCol);
+            roomsDataTable.Columns.Add( roomDisplayTextCol);
+
+        }
+
         private void AddCustomersToDataTable()
         {
             AddColumns();
@@ -65,7 +77,7 @@ namespace assignment2
         {
             lbCustomers.DataSource = customerDataTable;
             lbCustomers.DisplayMember = "name";
-            //lbCustomers.ValueMember = "id";
+            lbCustomers.ValueMember = "username";
         }
         private void AddColumns()
         {
