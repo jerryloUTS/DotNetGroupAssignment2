@@ -52,8 +52,10 @@ namespace assignment2
 
         public string GetTxtFileString()
         {
-            string checkInDateStr = checkInDate.ToString();
-            string checkOutDateStr = checkOutDate.ToString();
+
+
+            string checkInDateStr = checkInDate.ToString("yyyy-MM-dd");
+            string checkOutDateStr = checkOutDate.ToString("yyyy-MM-dd");
             //returns a txtFile genereated string.
             string s = id + "," + customerUserName + "," + roomId + "," + checkInDateStr + "," + checkOutDateStr;
             s += "," + numberOfGuests + "," + numbersOfDependents;

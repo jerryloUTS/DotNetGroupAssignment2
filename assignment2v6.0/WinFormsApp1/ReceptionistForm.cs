@@ -52,7 +52,12 @@ namespace assignment2
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-
+            //read selecttion from listboxes.
+            string customerUsername = (string)lbCustomers.SelectedValue;
+            int roomCode = Convert.ToInt32((String)lbRooms.SelectedValue);
+            BookRoomForm bookRoom = new BookRoomForm(customerUsername, roomCode);
+            this.Hide();
+            bookRoom.Show();
         }
 
         private void AddRoomCols()

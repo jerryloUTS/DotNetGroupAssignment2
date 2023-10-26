@@ -137,6 +137,7 @@
             lblBookingInfo.Size = new Size(50, 20);
             lblBookingInfo.TabIndex = 2;
             lblBookingInfo.Text = "label3";
+            lblBookingInfo.Click += lblBookingInfo_Click;
             // 
             // btnBook
             // 
@@ -158,6 +159,7 @@
             Controls.Add(groupBox1);
             Name = "BookRoomForm";
             Text = "BookRoomForm";
+            Load += BookRoomForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numDpDependents).EndInit();
