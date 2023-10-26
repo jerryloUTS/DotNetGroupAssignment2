@@ -43,7 +43,10 @@
             AddDishBtn = new Button();
             button2 = new Button();
             groupBox1 = new GroupBox();
-            btnAddEmployee = new Button();
+            AddEmployeeButton = new Button();
+            button4 = new Button();
+            button3 = new Button();
+            viewComplaints = new Button();
             button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -76,7 +79,7 @@
             // SearchRoomBtn
             // 
             SearchRoomBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SearchRoomBtn.Location = new Point(361, 336);
+            SearchRoomBtn.Location = new Point(361, 381);
             SearchRoomBtn.Margin = new Padding(4, 5, 4, 5);
             SearchRoomBtn.Name = "SearchRoomBtn";
             SearchRoomBtn.Size = new Size(140, 38);
@@ -88,7 +91,7 @@
             // DeleteCustomerBtn
             // 
             DeleteCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DeleteCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            DeleteCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             DeleteCustomerBtn.Location = new Point(219, 224);
             DeleteCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             DeleteCustomerBtn.Name = "DeleteCustomerBtn";
@@ -114,7 +117,7 @@
             // AllCustomerBtn
             // 
             AllCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AllCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            AllCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             AllCustomerBtn.Location = new Point(78, 224);
             AllCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             AllCustomerBtn.Name = "AllCustomerBtn";
@@ -127,7 +130,7 @@
             // SearchCustomerBtn
             // 
             SearchCustomerBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SearchCustomerBtn.Font = new Font("Microsoft Sans Serif", 6.5F, FontStyle.Regular, GraphicsUnit.Point);
+            SearchCustomerBtn.Font = new Font("Microsoft Sans Serif", 7F, FontStyle.Regular, GraphicsUnit.Point);
             SearchCustomerBtn.Location = new Point(361, 224);
             SearchCustomerBtn.Margin = new Padding(4, 5, 4, 5);
             SearchCustomerBtn.Name = "SearchCustomerBtn";
@@ -142,7 +145,7 @@
             label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label3.AutoSize = true;
             label3.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(73, 295);
+            label3.Location = new Point(73, 340);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
             label3.Size = new Size(85, 29);
@@ -153,7 +156,7 @@
             // AllRoomsBtn
             // 
             AllRoomsBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AllRoomsBtn.Location = new Point(219, 336);
+            AllRoomsBtn.Location = new Point(219, 381);
             AllRoomsBtn.Margin = new Padding(4, 5, 4, 5);
             AllRoomsBtn.Name = "AllRoomsBtn";
             AllRoomsBtn.Size = new Size(140, 38);
@@ -167,7 +170,7 @@
             label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             label4.AutoSize = true;
             label4.Font = new Font("Microsoft Sans Serif", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(76, 430);
+            label4.Location = new Point(76, 475);
             label4.Margin = new Padding(4, 0, 4, 0);
             label4.Name = "label4";
             label4.Size = new Size(142, 29);
@@ -178,7 +181,7 @@
             // AllDishesBtn
             // 
             AllDishesBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AllDishesBtn.Location = new Point(219, 471);
+            AllDishesBtn.Location = new Point(219, 516);
             AllDishesBtn.Margin = new Padding(4, 5, 4, 5);
             AllDishesBtn.Name = "AllDishesBtn";
             AllDishesBtn.Size = new Size(140, 38);
@@ -190,7 +193,7 @@
             // SearchDishBtn
             // 
             SearchDishBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            SearchDishBtn.Location = new Point(361, 471);
+            SearchDishBtn.Location = new Point(361, 516);
             SearchDishBtn.Margin = new Padding(4, 5, 4, 5);
             SearchDishBtn.Name = "SearchDishBtn";
             SearchDishBtn.Size = new Size(140, 38);
@@ -202,7 +205,7 @@
             // AddDishBtn
             // 
             AddDishBtn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            AddDishBtn.Location = new Point(78, 471);
+            AddDishBtn.Location = new Point(78, 516);
             AddDishBtn.Margin = new Padding(4, 5, 4, 5);
             AddDishBtn.Name = "AddDishBtn";
             AddDishBtn.Size = new Size(140, 38);
@@ -214,7 +217,7 @@
             // button2
             // 
             button2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button2.Location = new Point(78, 336);
+            button2.Location = new Point(78, 381);
             button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
             button2.Size = new Size(140, 38);
@@ -226,7 +229,10 @@
             // groupBox1
             // 
             groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBox1.Controls.Add(btnAddEmployee);
+            groupBox1.Controls.Add(AddEmployeeButton);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(viewComplaints);
             groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(button2);
@@ -251,21 +257,56 @@
             groupBox1.Text = "Admin Menu";
             groupBox1.Enter += groupBox1_Enter;
             // 
-            // btnAddEmployee
+            // AddEmployeeButton
             // 
-            btnAddEmployee.Location = new Point(336, 617);
-            btnAddEmployee.Name = "btnAddEmployee";
-            btnAddEmployee.Size = new Size(192, 29);
-            btnAddEmployee.TabIndex = 59;
-            btnAddEmployee.Text = "Add Employee";
-            btnAddEmployee.UseVisualStyleBackColor = true;
-            btnAddEmployee.Click += btnAddEmployee_Click;
+            AddEmployeeButton.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            AddEmployeeButton.Location = new Point(438, 643);
+            AddEmployeeButton.Margin = new Padding(4, 5, 4, 5);
+            AddEmployeeButton.Name = "AddEmployeeButton";
+            AddEmployeeButton.Size = new Size(140, 38);
+            AddEmployeeButton.TabIndex = 62;
+            AddEmployeeButton.Text = "Add Receptionist";
+            AddEmployeeButton.UseVisualStyleBackColor = true;
+            AddEmployeeButton.Click += AddEmployeeButton_Click;
+            // 
+            // button4
+            // 
+            button4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button4.Location = new Point(444, 643);
+            button4.Margin = new Padding(4, 5, 4, 5);
+            button4.Name = "button4";
+            button4.Size = new Size(0, 38);
+            button4.TabIndex = 61;
+            button4.Text = "Add Room";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            button3.Location = new Point(222, 326);
+            button3.Margin = new Padding(4, 5, 4, 5);
+            button3.Name = "button3";
+            button3.Size = new Size(0, 38);
+            button3.TabIndex = 60;
+            button3.Text = "Add Room";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // viewComplaints
+            // 
+            viewComplaints.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point);
+            viewComplaints.Location = new Point(219, 270);
+            viewComplaints.Name = "viewComplaints";
+            viewComplaints.Size = new Size(140, 37);
+            viewComplaints.TabIndex = 59;
+            viewComplaints.Text = "View Customer Complaints";
+            viewComplaints.UseVisualStyleBackColor = true;
+            viewComplaints.Click += viewComplaints_Click;
             // 
             // button1
             // 
             button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             button1.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(219, 519);
+            button1.Location = new Point(219, 564);
             button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
             button1.Size = new Size(140, 38);
@@ -308,6 +349,9 @@
         private Button button2;
         private GroupBox groupBox1;
         private Button button1;
-        private Button btnAddEmployee;
+        private Button viewComplaints;
+        private Button button3;
+        private Button AddEmployeeButton;
+        private Button button4;
     }
 }

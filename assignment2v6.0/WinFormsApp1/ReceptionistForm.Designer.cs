@@ -42,14 +42,16 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
+            btnLogOut = new Button();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // btnAddCustomer
             // 
-            btnAddCustomer.Location = new Point(34, 311);
+            btnAddCustomer.Location = new Point(55, 498);
+            btnAddCustomer.Margin = new Padding(5);
             btnAddCustomer.Name = "btnAddCustomer";
-            btnAddCustomer.Size = new Size(143, 29);
+            btnAddCustomer.Size = new Size(232, 46);
             btnAddCustomer.TabIndex = 0;
             btnAddCustomer.Text = "Add Customer";
             btnAddCustomer.UseVisualStyleBackColor = true;
@@ -61,7 +63,8 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { manageToolStripMenuItem, foodToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 28);
+            menuStrip1.Padding = new Padding(10, 3, 0, 3);
+            menuStrip1.Size = new Size(1300, 42);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -69,45 +72,47 @@
             // 
             manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookHotelRoomToolStripMenuItem, viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
-            manageToolStripMenuItem.Size = new Size(77, 24);
+            manageToolStripMenuItem.Size = new Size(121, 36);
             manageToolStripMenuItem.Text = "Manage";
             // 
             // bookHotelRoomToolStripMenuItem
             // 
             bookHotelRoomToolStripMenuItem.Name = "bookHotelRoomToolStripMenuItem";
-            bookHotelRoomToolStripMenuItem.Size = new Size(219, 26);
+            bookHotelRoomToolStripMenuItem.Size = new Size(352, 44);
             bookHotelRoomToolStripMenuItem.Text = "Book Hotel Room";
             // 
             // viewAllCustomersToolStripMenuItem
             // 
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            viewAllCustomersToolStripMenuItem.Size = new Size(219, 26);
+            viewAllCustomersToolStripMenuItem.Size = new Size(352, 44);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
             // 
             // reportIncidentToolStripMenuItem
             // 
             reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
-            reportIncidentToolStripMenuItem.Size = new Size(219, 26);
+            reportIncidentToolStripMenuItem.Size = new Size(352, 44);
             reportIncidentToolStripMenuItem.Text = "Report Incident";
+            reportIncidentToolStripMenuItem.Click += reportIncidentToolStripMenuItem_Click;
             // 
             // foodToolStripMenuItem
             // 
             foodToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewMenuToolStripMenuItem });
             foodToolStripMenuItem.Name = "foodToolStripMenuItem";
-            foodToolStripMenuItem.Size = new Size(57, 24);
+            foodToolStripMenuItem.Size = new Size(88, 36);
             foodToolStripMenuItem.Text = "Food";
             // 
             // viewMenuToolStripMenuItem
             // 
             viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
-            viewMenuToolStripMenuItem.Size = new Size(165, 26);
+            viewMenuToolStripMenuItem.Size = new Size(268, 44);
             viewMenuToolStripMenuItem.Text = "View Menu";
             // 
             // btnBook
             // 
-            btnBook.Location = new Point(526, 391);
+            btnBook.Location = new Point(855, 626);
+            btnBook.Margin = new Padding(5);
             btnBook.Name = "btnBook";
-            btnBook.Size = new Size(131, 29);
+            btnBook.Size = new Size(213, 46);
             btnBook.TabIndex = 2;
             btnBook.Text = "Book a Room";
             btnBook.UseVisualStyleBackColor = true;
@@ -116,37 +121,42 @@
             // lbCustomers
             // 
             lbCustomers.FormattingEnabled = true;
-            lbCustomers.ItemHeight = 20;
-            lbCustomers.Location = new Point(255, 162);
+            lbCustomers.ItemHeight = 32;
+            lbCustomers.Location = new Point(414, 259);
+            lbCustomers.Margin = new Padding(5);
             lbCustomers.Name = "lbCustomers";
-            lbCustomers.Size = new Size(213, 204);
+            lbCustomers.Size = new Size(344, 324);
             lbCustomers.TabIndex = 3;
             lbCustomers.SelectedIndexChanged += lbCustomers_SelectedIndexChanged;
             // 
             // lbRooms
             // 
             lbRooms.FormattingEnabled = true;
-            lbRooms.ItemHeight = 20;
-            lbRooms.Location = new Point(526, 162);
+            lbRooms.ItemHeight = 32;
+            lbRooms.Location = new Point(855, 259);
+            lbRooms.Margin = new Padding(5);
             lbRooms.Name = "lbRooms";
-            lbRooms.Size = new Size(210, 204);
+            lbRooms.Size = new Size(339, 324);
             lbRooms.TabIndex = 4;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(19, 62);
+            label1.Location = new Point(31, 99);
+            label1.Margin = new Padding(5, 0, 5, 0);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(78, 32);
             label1.TabIndex = 5;
             label1.Text = "label1";
+            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(255, 41);
+            label2.Location = new Point(414, 66);
+            label2.Margin = new Padding(5, 0, 5, 0);
             label2.Name = "label2";
-            label2.Size = new Size(128, 20);
+            label2.Size = new Size(207, 32);
             label2.TabIndex = 6;
             label2.Text = "Select a Customer";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -154,18 +164,30 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(526, 51);
+            label3.Location = new Point(855, 82);
+            label3.Margin = new Padding(5, 0, 5, 0);
             label3.Name = "label3";
-            label3.Size = new Size(105, 20);
+            label3.Size = new Size(166, 32);
             label3.TabIndex = 7;
             label3.Text = "Select a Room";
             label3.TextAlign = ContentAlignment.TopCenter;
             // 
+            // btnLogOut
+            // 
+            btnLogOut.Location = new Point(55, 626);
+            btnLogOut.Name = "btnLogOut";
+            btnLogOut.Size = new Size(150, 46);
+            btnLogOut.TabIndex = 8;
+            btnLogOut.Text = "Log Out";
+            btnLogOut.UseVisualStyleBackColor = true;
+            btnLogOut.Click += btnLogOut_Click;
+            // 
             // ReceptionistForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1300, 720);
+            Controls.Add(btnLogOut);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -175,6 +197,7 @@
             Controls.Add(btnAddCustomer);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(5);
             Name = "ReceptionistForm";
             Text = "ReceptionistForm";
             Load += ReceptionistForm_Load;
@@ -200,5 +223,6 @@
         private Label label1;
         private Label label2;
         private Label label3;
+        private Button btnLogOut;
     }
 }
