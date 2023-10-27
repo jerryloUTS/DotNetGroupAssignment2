@@ -15,6 +15,9 @@ namespace assignment2
     {
         private string customerUserName;
         private int roomCode;
+        private bool formComplete = false;
+        public bool FormComplete { get => formComplete; set => formComplete = value; }
+
         public BookRoomForm(string customerUserName, int roomCode)
         {
             InitializeComponent();
@@ -47,20 +50,27 @@ namespace assignment2
             RoomBooking newBooking = new RoomBooking(randomId, customerUserName, roomCode, checkInDate, checkOutDate, numbersOfGuests, numbersOfDependents);
             //this will be used to check if this room is vacent
             List<RoomBooking> roomBookings = GetBookedRooms();
+            //checks if there is numbers of guests
+            if (!(numbersOfGuests > 0))
+            {
+                MessageBox.Show("Please Input the numbers of guests", "Not all fields entered", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             //check if room is already booked by someone else.
-            if (dtpCheckInDate.Value == dtpCheckOutDate.Value)
+            else if (dtpCheckInDate.Value == dtpCheckOutDate.Value)
             {
                 MessageBox.Show("Please select a check out date.");
             }
             else if (IsAnyRoomsBooked(roomBookings, newBooking))
             {
-                MessageBox.Show("Sorry, this room is already booked by someone else.");
+                MessageBox.Show("Sorry, this room is already booked by someone else.", "Room Already Taken", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
                 //stores it into a text file
                 AddToTxtFile(newBooking);
-                MessageBox.Show("Room has been booked sucecsessfuly.");
+                MessageBox.Show("Room has been booked sucecsessfuly.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                formComplete = true;
+                this.Close();
             }
 
         }
@@ -158,4 +168,6 @@ namespace assignment2
             return dateFieldValue.Date + timeFieldValue.TimeOfDay;
         }
     }
+
+
 }

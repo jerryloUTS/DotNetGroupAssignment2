@@ -31,7 +31,6 @@
             btnAddCustomer = new Button();
             menuStrip1 = new MenuStrip();
             manageToolStripMenuItem = new ToolStripMenuItem();
-            bookHotelRoomToolStripMenuItem = new ToolStripMenuItem();
             viewAllCustomersToolStripMenuItem = new ToolStripMenuItem();
             reportIncidentToolStripMenuItem = new ToolStripMenuItem();
             viewAllBookingsToolStripMenuItem = new ToolStripMenuItem();
@@ -44,6 +43,7 @@
             label2 = new Label();
             label3 = new Label();
             btnLogOut = new Button();
+            viewRoomServiceRequestsToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,34 +69,28 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { bookHotelRoomToolStripMenuItem, viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem, viewRoomServiceRequestsToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
             // 
-            // bookHotelRoomToolStripMenuItem
-            // 
-            bookHotelRoomToolStripMenuItem.Name = "bookHotelRoomToolStripMenuItem";
-            bookHotelRoomToolStripMenuItem.Size = new Size(224, 26);
-            bookHotelRoomToolStripMenuItem.Text = "Book Hotel Room";
-            // 
             // viewAllCustomersToolStripMenuItem
             // 
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            viewAllCustomersToolStripMenuItem.Size = new Size(224, 26);
+            viewAllCustomersToolStripMenuItem.Size = new Size(282, 26);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
             // 
             // reportIncidentToolStripMenuItem
             // 
             reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
-            reportIncidentToolStripMenuItem.Size = new Size(224, 26);
+            reportIncidentToolStripMenuItem.Size = new Size(282, 26);
             reportIncidentToolStripMenuItem.Text = "Report Incident";
             reportIncidentToolStripMenuItem.Click += reportIncidentToolStripMenuItem_Click;
             // 
             // viewAllBookingsToolStripMenuItem
             // 
             viewAllBookingsToolStripMenuItem.Name = "viewAllBookingsToolStripMenuItem";
-            viewAllBookingsToolStripMenuItem.Size = new Size(224, 26);
+            viewAllBookingsToolStripMenuItem.Size = new Size(282, 26);
             viewAllBookingsToolStripMenuItem.Text = "View All Bookings";
             viewAllBookingsToolStripMenuItem.Click += viewAllBookingsToolStripMenuItem_Click;
             // 
@@ -110,8 +104,9 @@
             // viewMenuToolStripMenuItem
             // 
             viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
-            viewMenuToolStripMenuItem.Size = new Size(165, 26);
+            viewMenuToolStripMenuItem.Size = new Size(224, 26);
             viewMenuToolStripMenuItem.Text = "View Menu";
+            viewMenuToolStripMenuItem.Click += viewMenuToolStripMenuItem_Click;
             // 
             // btnBook
             // 
@@ -183,6 +178,12 @@
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
             // 
+            // viewRoomServiceRequestsToolStripMenuItem
+            // 
+            viewRoomServiceRequestsToolStripMenuItem.Name = "viewRoomServiceRequestsToolStripMenuItem";
+            viewRoomServiceRequestsToolStripMenuItem.Size = new Size(282, 26);
+            viewRoomServiceRequestsToolStripMenuItem.Text = "View Room Service Requests";
+            // 
             // ReceptionistForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -212,7 +213,6 @@
         private Button btnAddCustomer;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem manageToolStripMenuItem;
-        private ToolStripMenuItem bookHotelRoomToolStripMenuItem;
         private ToolStripMenuItem viewAllCustomersToolStripMenuItem;
         private ToolStripMenuItem foodToolStripMenuItem;
         private ToolStripMenuItem viewMenuToolStripMenuItem;
@@ -225,5 +225,6 @@
         private Label label3;
         private Button btnLogOut;
         private ToolStripMenuItem viewAllBookingsToolStripMenuItem;
+        private ToolStripMenuItem viewRoomServiceRequestsToolStripMenuItem;
     }
 }

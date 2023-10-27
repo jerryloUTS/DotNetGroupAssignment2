@@ -56,8 +56,8 @@ namespace assignment2
             string customerUsername = (string)lbCustomers.SelectedValue;
             int roomCode = Convert.ToInt32((String)lbRooms.SelectedValue);
             BookRoomForm bookRoom = new BookRoomForm(customerUsername, roomCode);
-            this.Hide();
-            bookRoom.Show();
+            bookRoom.ShowDialog();
+
         }
 
         private void AddRoomCols()
@@ -160,6 +160,12 @@ namespace assignment2
         {
             AllBookings allBookings = new AllBookings();
             allBookings.Show();
+        }
+
+        private void viewMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllDishes allDishes = new AllDishes();
+            allDishes.Show();
         }
     }
 }

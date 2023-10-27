@@ -72,21 +72,29 @@ namespace assignment2
 
         private void LoadBookingsFromTxtFile()
         {
-            foreach(string line in File.ReadAllLines("roomBookings.txt"))
+            try
             {
-                var row = bookedRooms.NewRow();
-                string[] splits = line.Split(",");
-                row["id"] = splits[0];
-                row["roomCode"] = splits[2];
-                row["customerUserName"] = splits[1];
-                row["checkInDate"] = ConvertToShortDateOnly(splits[3]);
-                row["checkInTime"] = ConvertToTimeOnly(splits[3]);
-                row["checkOutDate"] = ConvertToShortDateOnly(splits[4]);
-                row["checkOutTime"] = ConvertToTimeOnly(splits[4]);
-                row["guests"] = splits[5];
-                row["dependents"] = splits[6];
-                bookedRooms.Rows.Add(row);
+                foreach (string line in File.ReadAllLines("roomBookings.txt"))
+                {
+                    var row = bookedRooms.NewRow();
+                    string[] splits = line.Split(",");
+                    row["id"] = splits[0];
+                    row["roomCode"] = splits[2];
+                    row["customerUserName"] = splits[1];
+                    row["checkInDate"] = ConvertToShortDateOnly(splits[3]);
+                    row["checkInTime"] = ConvertToTimeOnly(splits[3]);
+                    row["checkOutDate"] = ConvertToShortDateOnly(splits[4]);
+                    row["checkOutTime"] = ConvertToTimeOnly(splits[4]);
+                    row["guests"] = splits[5];
+                    row["dependents"] = splits[6];
+                    bookedRooms.Rows.Add(row);
+                }
+            } 
+            catch(FileNotFoundException) 
+            {
+                MessageBox.Show("An error has occurred when loading saved bookings from disk.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
+            
         }
 
         //this is a function that will be used for converting dates from a string into a dateTime object and convert it back to string, it will be used to display the appropriate date formats and a time in a seperate column

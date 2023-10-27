@@ -30,6 +30,10 @@
         {
             label1 = new Label();
             groupBox1 = new GroupBox();
+            label6 = new Label();
+            dtpCheckOutTime = new DateTimePicker();
+            dtpCheckInTime = new DateTimePicker();
+            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             dtpCheckOutDate = new DateTimePicker();
@@ -39,10 +43,7 @@
             label2 = new Label();
             lblBookingInfo = new Label();
             btnBook = new Button();
-            label5 = new Label();
-            dtpCheckInTime = new DateTimePicker();
-            dtpCheckOutTime = new DateTimePicker();
-            label6 = new Label();
+            btnCancel = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numDpDependents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numDpGuests).BeginInit();
@@ -78,6 +79,40 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Booking Details";
             groupBox1.Enter += groupBox1_Enter;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(20, 219);
+            label6.Name = "label6";
+            label6.Size = new Size(113, 20);
+            label6.TabIndex = 11;
+            label6.Text = "Check Out Time";
+            // 
+            // dtpCheckOutTime
+            // 
+            dtpCheckOutTime.Format = DateTimePickerFormat.Time;
+            dtpCheckOutTime.Location = new Point(264, 219);
+            dtpCheckOutTime.Name = "dtpCheckOutTime";
+            dtpCheckOutTime.Size = new Size(146, 27);
+            dtpCheckOutTime.TabIndex = 10;
+            // 
+            // dtpCheckInTime
+            // 
+            dtpCheckInTime.Format = DateTimePickerFormat.Time;
+            dtpCheckInTime.Location = new Point(264, 156);
+            dtpCheckInTime.Name = "dtpCheckInTime";
+            dtpCheckInTime.Size = new Size(146, 27);
+            dtpCheckInTime.TabIndex = 9;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(20, 156);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Check In Time:";
             // 
             // label4
             // 
@@ -157,45 +192,22 @@
             btnBook.UseVisualStyleBackColor = true;
             btnBook.Click += btnBook_Click;
             // 
-            // label5
+            // btnCancel
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(20, 156);
-            label5.Name = "label5";
-            label5.Size = new Size(104, 20);
-            label5.TabIndex = 8;
-            label5.Text = "Check In Time:";
-            // 
-            // dtpCheckInTime
-            // 
-            dtpCheckInTime.Format = DateTimePickerFormat.Time;
-            dtpCheckInTime.Location = new Point(264, 156);
-            dtpCheckInTime.Name = "dtpCheckInTime";
-            dtpCheckInTime.Size = new Size(146, 27);
-            dtpCheckInTime.TabIndex = 9;
-            // 
-            // dtpCheckOutTime
-            // 
-            dtpCheckOutTime.Format = DateTimePickerFormat.Time;
-            dtpCheckOutTime.Location = new Point(264, 219);
-            dtpCheckOutTime.Name = "dtpCheckOutTime";
-            dtpCheckOutTime.Size = new Size(146, 27);
-            dtpCheckOutTime.TabIndex = 10;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(20, 219);
-            label6.Name = "label6";
-            label6.Size = new Size(113, 20);
-            label6.TabIndex = 11;
-            label6.Text = "Check Out Time";
+            btnCancel.DialogResult = DialogResult.Cancel;
+            btnCancel.Location = new Point(250, 463);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(94, 29);
+            btnCancel.TabIndex = 4;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
             // 
             // BookRoomForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(549, 536);
+            Controls.Add(btnCancel);
             Controls.Add(btnBook);
             Controls.Add(lblBookingInfo);
             Controls.Add(groupBox1);
@@ -227,5 +239,6 @@
         private Label label6;
         private DateTimePicker dtpCheckOutTime;
         private DateTimePicker dtpCheckInTime;
+        private Button btnCancel;
     }
 }
