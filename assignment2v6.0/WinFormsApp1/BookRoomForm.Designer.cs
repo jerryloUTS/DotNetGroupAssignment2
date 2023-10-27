@@ -39,6 +39,10 @@
             label2 = new Label();
             lblBookingInfo = new Label();
             btnBook = new Button();
+            label5 = new Label();
+            dtpCheckInTime = new DateTimePicker();
+            dtpCheckOutTime = new DateTimePicker();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numDpDependents).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numDpGuests).BeginInit();
@@ -55,6 +59,10 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(label6);
+            groupBox1.Controls.Add(dtpCheckOutTime);
+            groupBox1.Controls.Add(dtpCheckInTime);
+            groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(dtpCheckOutDate);
@@ -74,11 +82,11 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(20, 158);
+            label4.Location = new Point(20, 186);
             label4.Name = "label4";
-            label4.Size = new Size(114, 20);
+            label4.Size = new Size(112, 20);
             label4.TabIndex = 7;
-            label4.Text = "Check OUt Date";
+            label4.Text = "Check Out Date";
             // 
             // label3
             // 
@@ -92,7 +100,7 @@
             // dtpCheckOutDate
             // 
             dtpCheckOutDate.Format = DateTimePickerFormat.Short;
-            dtpCheckOutDate.Location = new Point(264, 158);
+            dtpCheckOutDate.Location = new Point(264, 186);
             dtpCheckOutDate.Name = "dtpCheckOutDate";
             dtpCheckOutDate.Size = new Size(146, 27);
             dtpCheckOutDate.TabIndex = 5;
@@ -149,6 +157,40 @@
             btnBook.UseVisualStyleBackColor = true;
             btnBook.Click += btnBook_Click;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(20, 156);
+            label5.Name = "label5";
+            label5.Size = new Size(104, 20);
+            label5.TabIndex = 8;
+            label5.Text = "Check In Time:";
+            // 
+            // dtpCheckInTime
+            // 
+            dtpCheckInTime.Format = DateTimePickerFormat.Time;
+            dtpCheckInTime.Location = new Point(264, 156);
+            dtpCheckInTime.Name = "dtpCheckInTime";
+            dtpCheckInTime.Size = new Size(146, 27);
+            dtpCheckInTime.TabIndex = 9;
+            // 
+            // dtpCheckOutTime
+            // 
+            dtpCheckOutTime.Format = DateTimePickerFormat.Time;
+            dtpCheckOutTime.Location = new Point(264, 219);
+            dtpCheckOutTime.Name = "dtpCheckOutTime";
+            dtpCheckOutTime.Size = new Size(146, 27);
+            dtpCheckOutTime.TabIndex = 10;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(20, 219);
+            label6.Name = "label6";
+            label6.Size = new Size(113, 20);
+            label6.TabIndex = 11;
+            label6.Text = "Check Out Time";
+            // 
             // BookRoomForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -181,5 +223,9 @@
         private DateTimePicker dtpCheckOutDate;
         private DateTimePicker dtpCheckInDate;
         private Button btnBook;
+        private Label label5;
+        private Label label6;
+        private DateTimePicker dtpCheckOutTime;
+        private DateTimePicker dtpCheckInTime;
     }
 }

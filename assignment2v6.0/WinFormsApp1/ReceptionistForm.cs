@@ -74,12 +74,12 @@ namespace assignment2
         //this is a uhelper function that will add the data from the text file to the room datatable.
         private void FetchRoomsFromTxt()
         {
-            foreach(string line in File.ReadAllLines("rooms.txt"))
+            foreach (string line in File.ReadAllLines("rooms.txt"))
             {
                 string[] splits = line.Split(',');
                 var row = roomsDataTable.NewRow();
                 row["code"] = splits[0];
-                row["name"] = "Room: #" + splits[0]; 
+                row["name"] = "Room: #" + splits[0];
                 roomsDataTable.Rows.Add(row);
             }
         }
@@ -127,7 +127,7 @@ namespace assignment2
 
         private void AddCustomerDataFromDB()
         {
-            foreach(string line in File.ReadAllLines("customerDB.txt"))
+            foreach (string line in File.ReadAllLines("customerDB.txt"))
             {
                 string[] splits = line.Split(",");
                 var row = customerDataTable.NewRow();
@@ -154,6 +154,12 @@ namespace assignment2
             this.Close();
             LoginForm login = new LoginForm();
             login.Show();
+        }
+
+        private void viewAllBookingsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllBookings allBookings = new AllBookings();
+            allBookings.Show();
         }
     }
 }

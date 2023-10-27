@@ -179,3 +179,4 @@ C:\Users\chris\source\repos\choc0099\DotNetGroupAssignment2\assignment2v6.0\WinF
 C:\Users\chris\source\repos\choc0099\DotNetGroupAssignment2\assignment2v6.0\WinFormsApp1\obj\Debug\net6.0-windows\assignment2.pdb
 C:\Users\chris\source\repos\choc0099\DotNetGroupAssignment2\assignment2v6.0\WinFormsApp1\obj\Debug\net6.0-windows\assignment2.genruntimeconfig.cache
 C:\Users\chris\source\repos\choc0099\DotNetGroupAssignment2\assignment2v6.0\WinFormsApp1\obj\Debug\net6.0-windows\ref\assignment2.dll
+C:\Users\chris\source\repos\choc0099\DotNetGroupAssignment2\assignment2v6.0\WinFormsApp1\obj\Debug\net6.0-windows\assignment2.AllBookings.resources

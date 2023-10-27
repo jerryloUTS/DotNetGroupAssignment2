@@ -40,15 +40,19 @@ namespace assignment2
             Random random = new Random();
             int randomId = random.Next();
 
-            DateTime checkInDate = dtpCheckInDate.Value;
-            DateTime checkOutDate = dtpCheckOutDate.Value;
+            DateTime checkInDate = CombineDateAndTimeFields(dtpCheckInDate.Value, dtpCheckInTime.Value);
+            DateTime checkOutDate = CombineDateAndTimeFields(dtpCheckOutDate.Value, dtpCheckOutTime.Value);
             int numbersOfGuests = Convert.ToInt32(numDpGuests.Value);
             int numbersOfDependents = Convert.ToInt32(numDpDependents.Value);
             RoomBooking newBooking = new RoomBooking(randomId, customerUserName, roomCode, checkInDate, checkOutDate, numbersOfGuests, numbersOfDependents);
             //this will be used to check if this room is vacent
             List<RoomBooking> roomBookings = GetBookedRooms();
             //check if room is already booked by someone else.
-            if (IsAnyRoomsBooked(roomBookings, newBooking))
+            if (dtpCheckInDate.Value == dtpCheckOutDate.Value)
+            {
+                MessageBox.Show("Please select a check out date.");
+            }
+            else if (IsAnyRoomsBooked(roomBookings, newBooking))
             {
                 MessageBox.Show("Sorry, this room is already booked by someone else.");
             }
@@ -109,11 +113,11 @@ namespace assignment2
             {
                 //then a nested if statements occurrs to check the booking dates for that specific room.
                 //only checks the actual edge cases.
-                /*if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
+                if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
                 {
                     return true;
-                }*/
-                if (currentBooking.CheckInDate >= newBooking.CheckInDate && currentBooking.CheckOutDate <= newBooking.CheckOutDate)
+                }
+                else if (currentBooking.CheckInDate >= newBooking.CheckInDate && currentBooking.CheckOutDate <= newBooking.CheckOutDate)
                 {
                     return true;
                 }
@@ -146,6 +150,12 @@ namespace assignment2
         {
             //displays a message with the customer username and room code.
             lblBookingInfo.Text = "You are Booking a room for " + customerUserName + " in Room #" + roomCode;
+        }
+
+        //this is a helperfunction that will combine both the date and times from seperate form controls.
+        private DateTime CombineDateAndTimeFields(DateTime dateFieldValue, DateTime timeFieldValue)
+        {
+            return dateFieldValue.Date + timeFieldValue.TimeOfDay;
         }
     }
 }
