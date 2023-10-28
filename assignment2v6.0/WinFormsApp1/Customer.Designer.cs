@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
             welcomeLabel = new Label();
-            label2 = new Label();
+            roomNo = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -54,21 +54,21 @@
             welcomeLabel.TabIndex = 0;
             welcomeLabel.Text = "welcome guest";
             // 
-            // label2
+            // roomNo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(25, 110);
-            label2.Name = "label2";
-            label2.Size = new Size(88, 23);
-            label2.TabIndex = 0;
-            label2.Text = "Room No:";
+            roomNo.AutoSize = true;
+            roomNo.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            roomNo.Location = new Point(25, 120);
+            roomNo.Name = "roomNo";
+            roomNo.Size = new Size(88, 23);
+            roomNo.TabIndex = 0;
+            roomNo.Text = "Room No:";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(25, 148);
+            label3.Location = new Point(25, 266);
             label3.Name = "label3";
             label3.Size = new Size(74, 23);
             label3.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(25, 186);
+            label4.Location = new Point(25, 303);
             label4.Name = "label4";
             label4.Size = new Size(55, 23);
             label4.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(25, 225);
+            label5.Location = new Point(25, 168);
             label5.Name = "label5";
             label5.Size = new Size(126, 23);
             label5.TabIndex = 0;
@@ -194,7 +194,7 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(roomNo);
             Controls.Add(welcomeLabel);
             Name = "Customer";
             Text = "Customer";
@@ -207,7 +207,7 @@
         #endregion
 
         private Label welcomeLabel;
-        private Label label2;
+        private Label roomNo;
         private Label label3;
         private Label label4;
         private Label label5;
