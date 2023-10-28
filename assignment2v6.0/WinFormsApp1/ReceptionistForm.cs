@@ -167,5 +167,11 @@ namespace assignment2
             AllDishes allDishes = new AllDishes();
             allDishes.Show();
         }
+
+        private void viewIncidentReportsMenuItem_Click(object sender, EventArgs e)
+        {
+            viewIncidents viewIncidentsForm = new viewIncidents();
+            viewIncidentsForm.Show();
+        }
     }
 }
