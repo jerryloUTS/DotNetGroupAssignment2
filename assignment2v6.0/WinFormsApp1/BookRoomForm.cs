@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -99,12 +100,44 @@ namespace assignment2
                     //adds it to the list
                     roomBookings.Add(booking);
                 }
+                Debug.WriteLine("Bookings text file loaded");
 
+            }
+            //this will try another way of parsing dates if a format exception has occurred.
+            catch(FormatException)
+            {
+                List<RoomBooking> alternateRoomBookings = new List<RoomBooking>();
+                
+                
+                foreach (string line in File.ReadAllLines("roomBookings.txt"))
+                {
+                    string[] splits = line.Split(',');
+                    //creates a new room booking object
+                    RoomBooking booking = new RoomBooking(
+                        Convert.ToInt32(splits[0]), //booking id
+                        splits[1], //customer's username
+                        Convert.ToInt32(splits[2]), //room id
+                        DateTime.ParseExact(splits[3], "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check in date
+                        DateTime.ParseExact(splits[4], "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check out date
+                        Convert.ToInt32(splits[5]), //numbers of guests
+                        Convert.ToInt32(splits[6]) //numbers of dependents.
+                        );
+                    //adds it to the list
+                    alternateRoomBookings.Add(booking);
+                }
+                Debug.WriteLine("Trying another method to parse dates.");
+                return alternateRoomBookings;
+
+                
             }
             //this will not cause the program to crash if there is no file found, it will just display a message on the debug line.
             catch (FileNotFoundException)
             {
                 Debug.WriteLine("The file is not found, you can create a new booking");
+            }
+            catch(Exception e)
+            {
+                Debug.WriteLine(e.Message);
             }
             return roomBookings;
 
