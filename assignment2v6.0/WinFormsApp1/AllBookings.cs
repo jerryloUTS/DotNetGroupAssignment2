@@ -109,7 +109,7 @@ namespace assignment2
             }
             catch(FormatException)
             {
-                DateTime date = DateTime.ParseExact(dateTimeStr, "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime date = DateTime.ParseExact(dateTimeStr, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
                 string shortDateFormat = date.ToString("dd/MM/yyyy");
                 return shortDateFormat;
             }
@@ -126,7 +126,7 @@ namespace assignment2
             //will try another method to parse into date object if it fails
             catch (FormatException)
             {
-                DateTime date = DateTime.ParseExact(dateTimeStr, "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                DateTime date = DateTime.ParseExact(dateTimeStr, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
                 string timeDateFormat = date.ToString("hh:mm tt");
                 return timeDateFormat;
             }
