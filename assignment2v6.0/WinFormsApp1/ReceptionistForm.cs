@@ -48,6 +48,26 @@ namespace assignment2
             //loads the customer data from memory to the table
             AddCustomersToDataTable();
             AddRoomsToDT();
+            //displays the grreting
+            LoadGreeting();
+        }
+
+        private void LoadGreeting()
+        {
+            try
+            {
+                string name = "";
+                foreach(string line in File.ReadAllLines(this.username + ".txt"))
+                {
+                    string[] splits = line.Split('|');
+                    name = splits[0];
+                }
+                lblGreeting.Text = "Hello " + name;
+            }
+            catch(FileNotFoundException)
+            {
+                lblGreeting.Text = "Unable to find name";
+            }
         }
 
         private void btnBook_Click(object sender, EventArgs e)
