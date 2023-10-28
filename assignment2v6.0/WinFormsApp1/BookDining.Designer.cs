@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookDining));
             panel1 = new Panel();
             groupBox1 = new GroupBox();
+            reserveButton = new Button();
             reserveTime = new DateTimePicker();
             label5 = new Label();
             label3 = new Label();
             reserveDate = new DateTimePicker();
             numGuests = new NumericUpDown();
             label1 = new Label();
-            reserveButton = new Button();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numGuests).BeginInit();
             SuspendLayout();
@@ -67,6 +67,16 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Dining Reservation";
             // 
+            // reserveButton
+            // 
+            reserveButton.Location = new Point(187, 335);
+            reserveButton.Name = "reserveButton";
+            reserveButton.Size = new Size(94, 29);
+            reserveButton.TabIndex = 10;
+            reserveButton.Text = "Reserve";
+            reserveButton.UseVisualStyleBackColor = true;
+            reserveButton.Click += reserveButton_Click;
+            // 
             // reserveTime
             // 
             reserveTime.Format = DateTimePickerFormat.Time;
@@ -75,6 +85,7 @@
             reserveTime.ShowUpDown = true;
             reserveTime.Size = new Size(146, 30);
             reserveTime.TabIndex = 9;
+            reserveTime.Value = new DateTime(2023, 10, 29, 0, 3, 37, 0);
             // 
             // label5
             // 
@@ -117,16 +128,6 @@
             label1.Size = new Size(157, 23);
             label1.TabIndex = 0;
             label1.Text = "Numbers of Guests";
-            // 
-            // reserveButton
-            // 
-            reserveButton.Location = new Point(187, 335);
-            reserveButton.Name = "reserveButton";
-            reserveButton.Size = new Size(94, 29);
-            reserveButton.TabIndex = 10;
-            reserveButton.Text = "Reserve";
-            reserveButton.UseVisualStyleBackColor = true;
-            reserveButton.Click += reserveButton_Click;
             // 
             // BookDining
             // 

@@ -8,16 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace assignment2
 {
     public partial class Customer : Form
     {
         LoginForm loginform;
+        private string username;
+
         public Customer(LoginForm loginform, string username)
         {
             InitializeComponent();
             this.loginform = loginform;
+            this.username = username;
             welcomeLabel.Text = "Welcome " + username + "!";
 
             // displayed assigned room number
@@ -84,8 +88,13 @@ namespace assignment2
 
         private void bookDiningButton_Click(object sender, EventArgs e)
         {
-            BookDining bookDining = new BookDining();
-            bookDining.Show();
+            // Detect the room number
+            int detectedRoomNumber = GetAssignedRoomInfo(username).Item1;
+
+            // Create an instance of BookDining with the room number
+            BookDining bookDiningForm = new BookDining(detectedRoomNumber);
+            //BookDining bookDining = new BookDining();
+            bookDiningForm.Show();
         }
     }
 }
