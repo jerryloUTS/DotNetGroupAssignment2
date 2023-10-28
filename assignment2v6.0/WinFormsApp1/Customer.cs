@@ -82,6 +82,10 @@ namespace assignment2
             return Tuple.Create(-1, DateTime.MinValue, DateTime.MinValue); // Indicates no booking found
         }
 
-
+        private void bookDiningButton_Click(object sender, EventArgs e)
+        {
+            BookDining bookDining = new BookDining();
+            bookDining.Show();
+        }
     }
 }

@@ -176,6 +176,7 @@
             bookDiningButton.TabIndex = 0;
             bookDiningButton.Text = "Book Dining";
             bookDiningButton.UseVisualStyleBackColor = false;
+            bookDiningButton.Click += bookDiningButton_Click;
             // 
             // exitButton
             // 
