@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customer));
-            label1 = new Label();
+            welcomeLabel = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -44,21 +44,21 @@
             panel1.SuspendLayout();
             SuspendLayout();
             // 
-            // label1
+            // welcomeLabel
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.Location = new Point(25, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(109, 23);
-            label1.TabIndex = 0;
-            label1.Text = "Guest Name:";
+            welcomeLabel.AutoSize = true;
+            welcomeLabel.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point);
+            welcomeLabel.Location = new Point(141, 45);
+            welcomeLabel.Name = "welcomeLabel";
+            welcomeLabel.Size = new Size(169, 31);
+            welcomeLabel.TabIndex = 0;
+            welcomeLabel.Text = "welcome guest";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(25, 63);
+            label2.Location = new Point(25, 110);
             label2.Name = "label2";
             label2.Size = new Size(88, 23);
             label2.TabIndex = 0;
@@ -68,7 +68,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(25, 101);
+            label3.Location = new Point(25, 148);
             label3.Name = "label3";
             label3.Size = new Size(74, 23);
             label3.TabIndex = 0;
@@ -78,7 +78,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(25, 139);
+            label4.Location = new Point(25, 186);
             label4.Name = "label4";
             label4.Size = new Size(55, 23);
             label4.TabIndex = 0;
@@ -88,7 +88,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(25, 178);
+            label5.Location = new Point(25, 225);
             label5.Name = "label5";
             label5.Size = new Size(126, 23);
             label5.TabIndex = 0;
@@ -195,7 +195,7 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(welcomeLabel);
             Name = "Customer";
             Text = "Customer";
             panel1.ResumeLayout(false);
@@ -206,7 +206,7 @@
 
         #endregion
 
-        private Label label1;
+        private Label welcomeLabel;
         private Label label2;
         private Label label3;
         private Label label4;

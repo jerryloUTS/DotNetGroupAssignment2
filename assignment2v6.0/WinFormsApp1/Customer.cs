@@ -17,6 +17,7 @@ namespace assignment2
         {
             InitializeComponent();
             this.loginform = loginform;
+            welcomeLabel.Text = "Welcome " + username + "!";
         }
 
         private void exitButton_Click(object sender, EventArgs e)

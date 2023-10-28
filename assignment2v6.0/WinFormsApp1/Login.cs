@@ -80,7 +80,8 @@ namespace assignment2
                             if (temp[0] == userTxtBx.Text && temp[1] == PassTxtbox.Text)
                             {
                                 Hide();
-                                new Customer(this, username).Show();
+                                //new Customer(this, username).Show();
+                                new Customer(this, userTxtBx.Text).Show();
                                 loggedin = true;
                             }
                             else if (temp[0] == userTxtBx.Text && temp[1] != PassTxtbox.Text)
