@@ -23,7 +23,6 @@ namespace assignment2
             // Set up the columns
             dataGridView.Columns.Add("Room", "Room");
             dataGridView.Columns.Add("Date & Time", "Date & Time");
-            //dataGridView.Columns.Add("Time", "Time");
             dataGridView.Columns.Add("Guests", "Guests");
 
             // Load and populate data from the DiningReservations text file
@@ -34,7 +33,7 @@ namespace assignment2
         {
             try
             {
-                // Read all lines from the DiningReservations text file
+                // Read all lines from the DinnerReservations text file
                 string[] lines = File.ReadAllLines("DinnerReservations.txt");
 
                 foreach (string line in lines)
@@ -44,9 +43,7 @@ namespace assignment2
                     // Check if the line has at least four parts
                     if (parts.Length >= 4)
                     {
-                        // Extract values
                         string room = parts[0].Trim();
-                        //string date = parts[1].Trim();
                         string dateTime = parts[2].Trim();
                         string guests = parts[3].Trim();
 
