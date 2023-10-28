@@ -35,6 +35,7 @@
             reportIncidentToolStripMenuItem = new ToolStripMenuItem();
             viewAllBookingsToolStripMenuItem = new ToolStripMenuItem();
             viewIncidentReportsMenuItem = new ToolStripMenuItem();
+            viewDinnerReservationsToolStripMenuItem = new ToolStripMenuItem();
             foodToolStripMenuItem = new ToolStripMenuItem();
             viewMenuToolStripMenuItem = new ToolStripMenuItem();
             btnBook = new Button();
@@ -44,7 +45,6 @@
             label2 = new Label();
             label3 = new Label();
             btnLogOut = new Button();
-            viewDinnerReservationsToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -102,6 +102,13 @@
             viewIncidentReportsMenuItem.Text = "View Incident Reports";
             viewIncidentReportsMenuItem.Click += viewIncidentReportsMenuItem_Click;
             // 
+            // viewDinnerReservationsToolStripMenuItem
+            // 
+            viewDinnerReservationsToolStripMenuItem.Name = "viewDinnerReservationsToolStripMenuItem";
+            viewDinnerReservationsToolStripMenuItem.Size = new Size(259, 26);
+            viewDinnerReservationsToolStripMenuItem.Text = "View Dinner Reservations";
+            viewDinnerReservationsToolStripMenuItem.Click += viewDinnerReservationsToolStripMenuItem_Click;
+            // 
             // foodToolStripMenuItem
             // 
             foodToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewMenuToolStripMenuItem });
@@ -112,7 +119,7 @@
             // viewMenuToolStripMenuItem
             // 
             viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
-            viewMenuToolStripMenuItem.Size = new Size(224, 26);
+            viewMenuToolStripMenuItem.Size = new Size(165, 26);
             viewMenuToolStripMenuItem.Text = "View Menu";
             viewMenuToolStripMenuItem.Click += viewMenuToolStripMenuItem_Click;
             // 
@@ -185,12 +192,6 @@
             btnLogOut.Text = "Log Out";
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
-            // 
-            // viewDinnerReservationsToolStripMenuItem
-            // 
-            viewDinnerReservationsToolStripMenuItem.Name = "viewDinnerReservationsToolStripMenuItem";
-            viewDinnerReservationsToolStripMenuItem.Size = new Size(259, 26);
-            viewDinnerReservationsToolStripMenuItem.Text = "View Dinner Reservations";
             // 
             // ReceptionistForm
             // 

@@ -173,5 +173,11 @@ namespace assignment2
             viewIncidents viewIncidentsForm = new viewIncidents();
             viewIncidentsForm.Show();
         }
+
+        private void viewDinnerReservationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            viewReservations diningReservations = new viewReservations();
+            diningReservations.Show();
+        }
     }
 }
