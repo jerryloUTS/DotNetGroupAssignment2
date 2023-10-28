@@ -22,3 +22,11 @@ Features: TV, Wi-Fi
 Price: $90
 Additional Info: No Pets allowed
 
+Room ID: 300
+Room Size: 200
+Bed Size:40
+Sight: Window
+Features: TV, Wi-Fi
+Price: $140
+Additional Info: No smoking allowed
+
