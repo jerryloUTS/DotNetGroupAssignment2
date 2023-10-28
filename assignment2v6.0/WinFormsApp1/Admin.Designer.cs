@@ -47,7 +47,6 @@
             button4 = new Button();
             button3 = new Button();
             viewComplaints = new Button();
-            button1 = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -233,7 +232,6 @@
             groupBox1.Controls.Add(button4);
             groupBox1.Controls.Add(button3);
             groupBox1.Controls.Add(viewComplaints);
-            groupBox1.Controls.Add(button1);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(button2);
             groupBox1.Controls.Add(label3);
@@ -293,27 +291,14 @@
             // 
             // viewComplaints
             // 
-            viewComplaints.Font = new Font("Microsoft Sans Serif", 6F, FontStyle.Regular, GraphicsUnit.Point);
+            viewComplaints.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
             viewComplaints.Location = new Point(219, 270);
             viewComplaints.Name = "viewComplaints";
             viewComplaints.Size = new Size(140, 37);
             viewComplaints.TabIndex = 59;
-            viewComplaints.Text = "View Customer Complaints";
+            viewComplaints.Text = "View Complaints";
             viewComplaints.UseVisualStyleBackColor = true;
             viewComplaints.Click += viewComplaints_Click;
-            // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            button1.Font = new Font("Microsoft Sans Serif", 8F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(219, 564);
-            button1.Margin = new Padding(4, 5, 4, 5);
-            button1.Name = "button1";
-            button1.Size = new Size(140, 38);
-            button1.TabIndex = 58;
-            button1.Text = "Delete Dish";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
             // 
             // Admin
             // 
@@ -348,7 +333,6 @@
         private Button AddDishBtn;
         private Button button2;
         private GroupBox groupBox1;
-        private Button button1;
         private Button viewComplaints;
         private Button button3;
         private Button AddEmployeeButton;
