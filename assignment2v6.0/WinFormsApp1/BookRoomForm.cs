@@ -117,8 +117,8 @@ namespace assignment2
                         Convert.ToInt32(splits[0]), //booking id
                         splits[1], //customer's username
                         Convert.ToInt32(splits[2]), //room id
-                        DateTime.ParseExact(splits[3], "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check in date
-                        DateTime.ParseExact(splits[4], "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check out date
+                        DateTime.ParseExact(splits[3], "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check in date
+                        DateTime.ParseExact(splits[4], "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture), //check out date
                         Convert.ToInt32(splits[5]), //numbers of guests
                         Convert.ToInt32(splits[6]) //numbers of dependents.
                         );
