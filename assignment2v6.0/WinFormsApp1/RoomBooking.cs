@@ -51,7 +51,7 @@ namespace assignment2
         }
 
         public string GetTxtFileString()
-        {
+        { 
             string checkInDateStr = checkInDate.ToString();
             string checkOutDateStr = checkOutDate.ToString();
             //returns a txtFile genereated string.
