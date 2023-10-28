@@ -44,6 +44,7 @@
             label2 = new Label();
             label3 = new Label();
             btnLogOut = new Button();
+            viewDinnerReservationsToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -69,7 +70,7 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem, viewIncidentReportsMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem, viewIncidentReportsMenuItem, viewDinnerReservationsToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -77,27 +78,27 @@
             // viewAllCustomersToolStripMenuItem
             // 
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            viewAllCustomersToolStripMenuItem.Size = new Size(236, 26);
+            viewAllCustomersToolStripMenuItem.Size = new Size(259, 26);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
             // 
             // reportIncidentToolStripMenuItem
             // 
             reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
-            reportIncidentToolStripMenuItem.Size = new Size(236, 26);
+            reportIncidentToolStripMenuItem.Size = new Size(259, 26);
             reportIncidentToolStripMenuItem.Text = "Report Incident";
             reportIncidentToolStripMenuItem.Click += reportIncidentToolStripMenuItem_Click;
             // 
             // viewAllBookingsToolStripMenuItem
             // 
             viewAllBookingsToolStripMenuItem.Name = "viewAllBookingsToolStripMenuItem";
-            viewAllBookingsToolStripMenuItem.Size = new Size(236, 26);
+            viewAllBookingsToolStripMenuItem.Size = new Size(259, 26);
             viewAllBookingsToolStripMenuItem.Text = "View All Bookings";
             viewAllBookingsToolStripMenuItem.Click += viewAllBookingsToolStripMenuItem_Click;
             // 
             // viewIncidentReportsMenuItem
             // 
             viewIncidentReportsMenuItem.Name = "viewIncidentReportsMenuItem";
-            viewIncidentReportsMenuItem.Size = new Size(236, 26);
+            viewIncidentReportsMenuItem.Size = new Size(259, 26);
             viewIncidentReportsMenuItem.Text = "View Incident Reports";
             viewIncidentReportsMenuItem.Click += viewIncidentReportsMenuItem_Click;
             // 
@@ -111,7 +112,7 @@
             // viewMenuToolStripMenuItem
             // 
             viewMenuToolStripMenuItem.Name = "viewMenuToolStripMenuItem";
-            viewMenuToolStripMenuItem.Size = new Size(165, 26);
+            viewMenuToolStripMenuItem.Size = new Size(224, 26);
             viewMenuToolStripMenuItem.Text = "View Menu";
             viewMenuToolStripMenuItem.Click += viewMenuToolStripMenuItem_Click;
             // 
@@ -185,6 +186,12 @@
             btnLogOut.UseVisualStyleBackColor = true;
             btnLogOut.Click += btnLogOut_Click;
             // 
+            // viewDinnerReservationsToolStripMenuItem
+            // 
+            viewDinnerReservationsToolStripMenuItem.Name = "viewDinnerReservationsToolStripMenuItem";
+            viewDinnerReservationsToolStripMenuItem.Size = new Size(259, 26);
+            viewDinnerReservationsToolStripMenuItem.Text = "View Dinner Reservations";
+            // 
             // ReceptionistForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -227,5 +234,6 @@
         private Button btnLogOut;
         private ToolStripMenuItem viewAllBookingsToolStripMenuItem;
         private ToolStripMenuItem viewIncidentReportsMenuItem;
+        private ToolStripMenuItem viewDinnerReservationsToolStripMenuItem;
     }
 }
