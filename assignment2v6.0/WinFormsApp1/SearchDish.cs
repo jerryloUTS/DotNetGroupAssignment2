@@ -27,7 +27,7 @@ namespace assignment2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var lines = File.ReadAllText("dishDisplay.txt");
+            var lines = File.ReadAllText("dish.txt");
             if (!File.Exists(dishSearch.Text + ".txt"))
             {
                 MessageBox.Show(dishSearch.Text + " was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

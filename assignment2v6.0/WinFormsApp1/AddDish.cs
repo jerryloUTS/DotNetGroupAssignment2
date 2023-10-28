@@ -99,10 +99,10 @@ namespace assignment2
             {
                 string dishInfo = (DishTxtBox.Text + ",$" + PriceTxtBox.Text + "," + CalorieTxtBox.Text + "kJ," + DishType.Text + "," + AllergenTxtBox.Text + "," + AdditionalInfoBox.Text);
                 string dishDisplay = ("Dish: " + DishTxtBox.Text + "\nPrice: $" + PriceTxtBox.Text + "\nCalories (kJ): " + CalorieTxtBox.Text + "kJ\nMeal Type: " + DishType.Text + "\nAllergens: " + AllergenTxtBox.Text + "\nAdditional Information: " + AdditionalInfoBox.Text + "\n\n");
+                Dish dishes = new Dish(DishTxtBox.Text, PriceTxtBox.Text, CalorieTxtBox.Text, DishType.Text, AllergenTxtBox.Text, AdditionalInfoBox.Text);
                 MessageBox.Show("Dish has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 File.AppendAllText("dish.txt", dishInfo + "\n");
-                File.AppendAllText("dishDisplay.txt", dishDisplay + "\n");
-                File.AppendAllText(DishTxtBox.Text + ".txt", dishDisplay);
+                File.AppendAllText(DishTxtBox.Text + ".txt", dishInfo);
                 Close();
             }
         }
