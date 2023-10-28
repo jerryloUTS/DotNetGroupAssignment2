@@ -71,7 +71,7 @@
             // 
             reserveButton.Location = new Point(187, 335);
             reserveButton.Name = "reserveButton";
-            reserveButton.Size = new Size(94, 29);
+            reserveButton.Size = new Size(94, 33);
             reserveButton.TabIndex = 10;
             reserveButton.Text = "Reserve";
             reserveButton.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             Controls.Add(panel1);
             Controls.Add(groupBox1);
             Name = "BookDining";
-            Text = "Form2";
+            Text = "Book Dining";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numGuests).EndInit();
