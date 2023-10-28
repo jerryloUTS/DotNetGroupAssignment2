@@ -44,7 +44,7 @@
             checkOutDate = new Label();
             label1 = new Label();
             label2 = new Label();
-            label4 = new Label();
+            dinnerReservationLabel = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -220,21 +220,21 @@
             label2.TabIndex = 3;
             label2.Text = "Check in:";
             // 
-            // label4
+            // dinnerReservationLabel
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(29, 323);
-            label4.Name = "label4";
-            label4.Size = new Size(108, 20);
-            label4.TabIndex = 4;
-            label4.Text = "reservationInfo";
+            dinnerReservationLabel.AutoSize = true;
+            dinnerReservationLabel.Location = new Point(29, 323);
+            dinnerReservationLabel.Name = "dinnerReservationLabel";
+            dinnerReservationLabel.Size = new Size(108, 20);
+            dinnerReservationLabel.TabIndex = 4;
+            dinnerReservationLabel.Text = "reservationInfo";
             // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(label4);
+            Controls.Add(dinnerReservationLabel);
             Controls.Add(checkOutDate);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -270,6 +270,6 @@
         private Label checkOutDate;
         private Label label1;
         private Label label2;
-        private Label label4;
+        private Label dinnerReservationLabel;
     }
 }

@@ -24,7 +24,7 @@ namespace assignment2
             this.username = username;
             welcomeLabel.Text = "Welcome " + username + "!";
 
-            // displayed assigned room number
+            // display assigned room number
             var roomInfo = GetAssignedRoomInfo(username);
 
             if (roomInfo.Item1 != -1)
@@ -39,6 +39,11 @@ namespace assignment2
                 checkInDate.Text = "N/A";
                 checkOutDate.Text = "N/A";
             }
+
+            // Display dinner reservation
+            int detectedRoomNumber = GetAssignedRoomInfo(username).Item1;
+            string dinnerReservation = GetDinnerReservation(username, detectedRoomNumber);
+            dinnerReservationLabel.Text = dinnerReservation;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
@@ -88,12 +93,10 @@ namespace assignment2
 
         private void bookDiningButton_Click(object sender, EventArgs e)
         {
-            // Detect the room number
+            // get room number
             int detectedRoomNumber = GetAssignedRoomInfo(username).Item1;
 
-            // Create an instance of BookDining with the room number
             BookDining bookDiningForm = new BookDining(detectedRoomNumber);
-            //BookDining bookDining = new BookDining();
             bookDiningForm.Show();
         }
 
@@ -101,6 +104,38 @@ namespace assignment2
         {
             AllDishes viewFood = new AllDishes();
             viewFood.Show();
+        }
+
+        private string GetDinnerReservation(string username, int roomNumber)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines("DinnerReservations.txt");
+
+                foreach (string line in lines)
+                {
+                    string[] parts = line.Split(',');
+
+                    if (parts.Length >= 3)
+                    {
+                        int reservedRoomNumber;
+                        string reservedDateTimeString = parts[2].Trim();
+                        DateTime reservedDateTime;
+
+                        if (int.TryParse(parts[0], out reservedRoomNumber) && reservedRoomNumber == roomNumber &&
+                            DateTime.TryParse(reservedDateTimeString, out reservedDateTime))
+                        {
+                            return "You have a dinner reservation for " + reservedDateTime.ToString("dd/MM/yyyy hh:mm tt") + "!";
+                        }
+                    }
+                }
+            }
+            catch (FileNotFoundException)
+            {
+                Debug.WriteLine("The file is not found; there are no dinner reservations yet.");
+            }
+
+            return "You have no dinner reservations.";
         }
     }
 }
