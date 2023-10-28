@@ -2,3 +2,5 @@ admin,admin
 saoban,1234
 chris012,12345
 daniel112,12345
+saorecep,12345
+dandan,12345
