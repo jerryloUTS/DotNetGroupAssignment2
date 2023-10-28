@@ -28,96 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.OpenBtn = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            button1 = new Button();
+            label1 = new Label();
+            label7 = new Label();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            OpenBtn = new Button();
+            richTextBox1 = new RichTextBox();
+            SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(342, 606);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 30);
-            this.button1.TabIndex = 63;
-            this.button1.Text = "Back";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            button1.Location = new Point(342, 758);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(86, 38);
+            button1.TabIndex = 63;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 62;
-            this.label1.Text = "All Customers";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            label1.AutoSize = true;
+            label1.Location = new Point(97, 164);
+            label1.Name = "label1";
+            label1.Size = new Size(100, 20);
+            label1.TabIndex = 62;
+            label1.Text = "All Customers";
+            label1.Click += label1_Click_1;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(350, 90);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(196, 31);
-            this.label7.TabIndex = 60;
-            this.label7.Text = "All Customers";
+            label7.AutoSize = true;
+            label7.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label7.Location = new Point(350, 112);
+            label7.Margin = new Padding(4, 0, 4, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(196, 31);
+            label7.TabIndex = 60;
+            label7.Text = "All Customers";
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(61, 4);
+            contextMenuStrip1.Opening += contextMenuStrip1_Opening;
             // 
             // OpenBtn
             // 
-            this.OpenBtn.Location = new System.Drawing.Point(434, 606);
-            this.OpenBtn.Name = "OpenBtn";
-            this.OpenBtn.Size = new System.Drawing.Size(86, 30);
-            this.OpenBtn.TabIndex = 65;
-            this.OpenBtn.Text = "Open";
-            this.OpenBtn.UseVisualStyleBackColor = true;
-            this.OpenBtn.Click += new System.EventHandler(this.OpenBtn_Click);
+            OpenBtn.Location = new Point(434, 758);
+            OpenBtn.Margin = new Padding(3, 4, 3, 4);
+            OpenBtn.Name = "OpenBtn";
+            OpenBtn.Size = new Size(86, 38);
+            OpenBtn.TabIndex = 65;
+            OpenBtn.Text = "Open";
+            OpenBtn.UseVisualStyleBackColor = true;
+            OpenBtn.Click += OpenBtn_Click;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.richTextBox1.Location = new System.Drawing.Point(100, 150);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(700, 450);
-            this.richTextBox1.TabIndex = 67;
-            this.richTextBox1.Text = "";
+            richTextBox1.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox1.Location = new Point(100, 188);
+            richTextBox1.Margin = new Padding(3, 4, 3, 4);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(700, 562);
+            richTextBox1.TabIndex = 67;
+            richTextBox1.Text = "";
             // 
             // AllCustomers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(882, 703);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.OpenBtn);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label7);
-            this.Name = "AllCustomers";
-            this.Text = "Form1";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(882, 879);
+            Controls.Add(richTextBox1);
+            Controls.Add(OpenBtn);
+            Controls.Add(button1);
+            Controls.Add(label1);
+            Controls.Add(label7);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "AllCustomers";
+            Text = "View All Customers";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button OpenBtn;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private Button button1;
+        private Label label1;
+        private Label label7;
+        private ContextMenuStrip contextMenuStrip1;
+        private Button OpenBtn;
+        private RichTextBox richTextBox1;
     }
 }
