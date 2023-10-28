@@ -12,9 +12,12 @@ namespace assignment2
 {
     public partial class BookDining : Form
     {
+        //private int roomNumber;
+
         public BookDining()
         {
             InitializeComponent();
         }
+
     }
 }
