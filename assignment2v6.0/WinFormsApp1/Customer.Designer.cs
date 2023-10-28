@@ -41,6 +41,10 @@
             roomServiceButton = new Button();
             bookDiningButton = new Button();
             exitButton = new Button();
+            checkInDate = new Label();
+            checkOutDate = new Label();
+            label1 = new Label();
+            label2 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -184,11 +188,55 @@
             exitButton.UseVisualStyleBackColor = true;
             exitButton.Click += exitButton_Click;
             // 
+            // checkInDate
+            // 
+            checkInDate.AutoSize = true;
+            checkInDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            checkInDate.Location = new Point(131, 222);
+            checkInDate.Name = "checkInDate";
+            checkInDate.Size = new Size(71, 20);
+            checkInDate.TabIndex = 3;
+            checkInDate.Text = "Check in:";
+            // 
+            // checkOutDate
+            // 
+            checkOutDate.AutoSize = true;
+            checkOutDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            checkOutDate.Location = new Point(342, 221);
+            checkOutDate.Name = "checkOutDate";
+            checkOutDate.Size = new Size(81, 20);
+            checkOutDate.TabIndex = 3;
+            checkOutDate.Text = "Check out:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(55, 219);
+            label1.Name = "label1";
+            label1.Size = new Size(80, 23);
+            label1.TabIndex = 3;
+            label1.Text = "Check in:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.Location = new Point(256, 218);
+            label2.Name = "label2";
+            label2.Size = new Size(80, 23);
+            label2.TabIndex = 3;
+            label2.Text = "Check in:";
+            // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(checkOutDate);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(checkInDate);
             Controls.Add(exitButton);
             Controls.Add(panel1);
             Controls.Add(bookingDetail);
@@ -218,5 +266,9 @@
         private Label label7;
         private Button reportButton;
         private Button exitButton;
+        private Label checkInDate;
+        private Label checkOutDate;
+        private Label label1;
+        private Label label2;
     }
 }

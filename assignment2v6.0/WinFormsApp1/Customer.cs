@@ -21,11 +21,19 @@ namespace assignment2
             welcomeLabel.Text = "Welcome " + username + "!";
 
             // displayed assigned room number
-            int assignedRoom = GetAssignedRoomNumber(username);
+            var roomInfo = GetAssignedRoomInfo(username);
 
-            if (assignedRoom != -1)
+            if (roomInfo.Item1 != -1)
             {
-                roomNo.Text += " " + assignedRoom;
+                roomNo.Text += " " + roomInfo.Item1;
+                checkInDate.Text = roomInfo.Item2.ToShortDateString();
+                checkOutDate.Text = roomInfo.Item3.ToShortDateString();
+            }
+            else
+            {
+                roomNo.Text += " No room assigned yet.";
+                checkInDate.Text = "N/A";
+                checkOutDate.Text = "N/A";
             }
         }
 
@@ -41,7 +49,7 @@ namespace assignment2
         }
 
         // fetching the assigned room number from the roomBookings file
-        private int GetAssignedRoomNumber(string username)
+        private Tuple<int, DateTime, DateTime> GetAssignedRoomInfo(string username)
         {
             try
             {
@@ -51,21 +59,18 @@ namespace assignment2
                 {
                     string[] parts = line.Split(',');
 
-                    if (parts.Length >= 3)
+                    if (parts.Length >= 7)
                     {
                         string bookedUsername = parts[1].Trim();
                         int roomNumber = 0;
+                        DateTime checkInDate;
+                        DateTime checkOutDate;
 
-                        if (bookedUsername == username && int.TryParse(parts[2], out roomNumber))
+                        if (bookedUsername == username && int.TryParse(parts[2], out roomNumber) &&
+                            DateTime.TryParse(parts[3], out checkInDate) && DateTime.TryParse(parts[4], out checkOutDate))
                         {
-                            return roomNumber;
+                            return Tuple.Create(roomNumber, checkInDate, checkOutDate);
                         }
-
-                        /*else
-                        {
-                            roomNo.Text += " No room assigned yet.";
-                            break;
-                        }*/
                     }
                 }
             }
@@ -74,8 +79,9 @@ namespace assignment2
                 Debug.WriteLine("The file is not found; you can create a new booking");
             }
 
-            return -1;
+            return Tuple.Create(-1, DateTime.MinValue, DateTime.MinValue); // Indicates no booking found
         }
+
 
     }
 }

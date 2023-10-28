@@ -1,3 +1,4 @@
 100,190m,20,Window,Wi-Fi,TV,$120,No smoking allowed.
 200,120m,20,Rainforest,Wi-Fi,TV,$90,No Pets allowed
 300,200m,40,Window,Wi-Fi,TV,$140,No smoking allowed
+400,200m,50,Sea,Wi-Fi,TV,$180,No pets

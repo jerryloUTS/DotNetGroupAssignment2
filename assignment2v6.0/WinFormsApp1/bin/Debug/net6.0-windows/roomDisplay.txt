@@ -30,3 +30,11 @@ Features: TV, Wi-Fi
 Price: $140
 Additional Info: No smoking allowed
 
+Room ID: 400
+Room Size: 200
+Bed Size:50
+Sight: Sea
+Features: TV, Wi-Fi
+Price: $180
+Additional Info: No pets
+
