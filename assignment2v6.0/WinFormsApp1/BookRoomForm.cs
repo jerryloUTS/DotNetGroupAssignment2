@@ -55,11 +55,6 @@ namespace assignment2
             {
                 MessageBox.Show("Please Input the numbers of guests", "Not all fields entered", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            //check if room is already booked by someone else.
-            else if (dtpCheckInDate.Value == dtpCheckOutDate.Value)
-            {
-                MessageBox.Show("Please select a check out date.");
-            }
             else if (IsAnyRoomsBooked(roomBookings, newBooking))
             {
                 MessageBox.Show("Sorry, this room is already booked by someone else.", "Room Already Taken", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -123,11 +118,12 @@ namespace assignment2
             {
                 //then a nested if statements occurrs to check the booking dates for that specific room.
                 //only checks the actual edge cases.
-                if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
+                /*if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
                 {
                     return true;
-                }
-                else if (currentBooking.CheckInDate >= newBooking.CheckInDate && currentBooking.CheckOutDate <= newBooking.CheckOutDate)
+                }*/
+                //checks the date ranges if hotel room is already booked for some or all of the selected dates.
+                if (currentBooking.CheckInDate < newBooking.CheckOutDate && newBooking.CheckInDate < currentBooking.CheckOutDate)
                 {
                     return true;
                 }

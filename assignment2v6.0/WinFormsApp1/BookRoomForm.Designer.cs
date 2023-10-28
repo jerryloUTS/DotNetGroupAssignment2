@@ -94,6 +94,7 @@
             dtpCheckOutTime.Format = DateTimePickerFormat.Time;
             dtpCheckOutTime.Location = new Point(264, 219);
             dtpCheckOutTime.Name = "dtpCheckOutTime";
+            dtpCheckOutTime.ShowUpDown = true;
             dtpCheckOutTime.Size = new Size(146, 27);
             dtpCheckOutTime.TabIndex = 10;
             // 
@@ -102,6 +103,7 @@
             dtpCheckInTime.Format = DateTimePickerFormat.Time;
             dtpCheckInTime.Location = new Point(264, 156);
             dtpCheckInTime.Name = "dtpCheckInTime";
+            dtpCheckInTime.ShowUpDown = true;
             dtpCheckInTime.Size = new Size(146, 27);
             dtpCheckInTime.TabIndex = 9;
             // 
