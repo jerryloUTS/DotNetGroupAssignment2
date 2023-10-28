@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,18 +99,39 @@ namespace assignment2
         }
 
         //this is a function that will be used for converting dates from a string into a dateTime object and convert it back to string, it will be used to display the appropriate date formats and a time in a seperate column
-        private String ConvertToShortDateOnly(string dateTimeStr)
+        private static String ConvertToShortDateOnly(string dateTimeStr)
         {
-            DateTime date = Convert.ToDateTime(dateTimeStr);
-            string shortDateFormat = date.ToString("dd/MM/yyyy");
-            return shortDateFormat;
+            try
+            {
+                DateTime date = Convert.ToDateTime(dateTimeStr);
+                string shortDateFormat = date.ToString("dd/MM/yyyy");
+                return shortDateFormat;
+            }
+            catch(FormatException)
+            {
+                DateTime date = DateTime.ParseExact(dateTimeStr, "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                string shortDateFormat = date.ToString("dd/MM/yyyy");
+                return shortDateFormat;
+            }
         }
 
-        private string ConvertToTimeOnly(string dateTimeStr)
+        private static string ConvertToTimeOnly(string dateTimeStr)
         {
-            DateTime date = Convert.ToDateTime(dateTimeStr);
-            string timeDateFormat = date.ToString("hh:mm tt"); 
-            return timeDateFormat;
+            try
+            {
+                DateTime date = Convert.ToDateTime(dateTimeStr);
+                string timeDateFormat = date.ToString("hh:mm tt");
+                return timeDateFormat;
+            }
+            //will try another method to parse into date object if it fails
+            catch (FormatException)
+            {
+                DateTime date = DateTime.ParseExact(dateTimeStr, "dd/MM/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+                string timeDateFormat = date.ToString("hh:mm tt");
+                return timeDateFormat;
+            }
+
+            
         }
     }
 }
