@@ -31,14 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BookDining));
             panel1 = new Panel();
             groupBox1 = new GroupBox();
-            dtpCheckInTime = new DateTimePicker();
+            reserveTime = new DateTimePicker();
             label5 = new Label();
             label3 = new Label();
-            dtpCheckInDate = new DateTimePicker();
-            numDpGuests = new NumericUpDown();
+            reserveDate = new DateTimePicker();
+            numGuests = new NumericUpDown();
             label1 = new Label();
+            reserveButton = new Button();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numDpGuests).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numGuests).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -51,28 +52,29 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(dtpCheckInTime);
+            groupBox1.Controls.Add(reserveButton);
+            groupBox1.Controls.Add(reserveTime);
             groupBox1.Controls.Add(label5);
             groupBox1.Controls.Add(label3);
-            groupBox1.Controls.Add(dtpCheckInDate);
-            groupBox1.Controls.Add(numDpGuests);
+            groupBox1.Controls.Add(reserveDate);
+            groupBox1.Controls.Add(numGuests);
             groupBox1.Controls.Add(label1);
             groupBox1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.Location = new Point(291, 33);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(465, 403);
+            groupBox1.Size = new Size(465, 395);
             groupBox1.TabIndex = 2;
             groupBox1.TabStop = false;
             groupBox1.Text = "Dining Reservation";
             // 
-            // dtpCheckInTime
+            // reserveTime
             // 
-            dtpCheckInTime.Format = DateTimePickerFormat.Time;
-            dtpCheckInTime.Location = new Point(264, 156);
-            dtpCheckInTime.Name = "dtpCheckInTime";
-            dtpCheckInTime.ShowUpDown = true;
-            dtpCheckInTime.Size = new Size(146, 30);
-            dtpCheckInTime.TabIndex = 9;
+            reserveTime.Format = DateTimePickerFormat.Time;
+            reserveTime.Location = new Point(264, 156);
+            reserveTime.Name = "reserveTime";
+            reserveTime.ShowUpDown = true;
+            reserveTime.Size = new Size(146, 30);
+            reserveTime.TabIndex = 9;
             // 
             // label5
             // 
@@ -92,20 +94,20 @@
             label3.TabIndex = 6;
             label3.Text = "Check In Date";
             // 
-            // dtpCheckInDate
+            // reserveDate
             // 
-            dtpCheckInDate.Format = DateTimePickerFormat.Short;
-            dtpCheckInDate.Location = new Point(264, 119);
-            dtpCheckInDate.Name = "dtpCheckInDate";
-            dtpCheckInDate.Size = new Size(146, 30);
-            dtpCheckInDate.TabIndex = 4;
+            reserveDate.Format = DateTimePickerFormat.Short;
+            reserveDate.Location = new Point(264, 119);
+            reserveDate.Name = "reserveDate";
+            reserveDate.Size = new Size(146, 30);
+            reserveDate.TabIndex = 4;
             // 
-            // numDpGuests
+            // numGuests
             // 
-            numDpGuests.Location = new Point(264, 41);
-            numDpGuests.Name = "numDpGuests";
-            numDpGuests.Size = new Size(105, 30);
-            numDpGuests.TabIndex = 2;
+            numGuests.Location = new Point(264, 41);
+            numGuests.Name = "numGuests";
+            numGuests.Size = new Size(105, 30);
+            numGuests.TabIndex = 2;
             // 
             // label1
             // 
@@ -115,6 +117,16 @@
             label1.Size = new Size(157, 23);
             label1.TabIndex = 0;
             label1.Text = "Numbers of Guests";
+            // 
+            // reserveButton
+            // 
+            reserveButton.Location = new Point(187, 335);
+            reserveButton.Name = "reserveButton";
+            reserveButton.Size = new Size(94, 29);
+            reserveButton.TabIndex = 10;
+            reserveButton.Text = "Reserve";
+            reserveButton.UseVisualStyleBackColor = true;
+            reserveButton.Click += reserveButton_Click;
             // 
             // BookDining
             // 
@@ -127,7 +139,7 @@
             Text = "Form2";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numDpGuests).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numGuests).EndInit();
             ResumeLayout(false);
         }
 
@@ -135,11 +147,12 @@
 
         private Panel panel1;
         private GroupBox groupBox1;
-        private DateTimePicker dtpCheckInTime;
+        private DateTimePicker reserveTime;
         private Label label5;
         private Label label3;
-        private DateTimePicker dtpCheckInDate;
-        private NumericUpDown numDpGuests;
+        private DateTimePicker reserveDate;
+        private NumericUpDown numGuests;
         private Label label1;
+        private Button reserveButton;
     }
 }
