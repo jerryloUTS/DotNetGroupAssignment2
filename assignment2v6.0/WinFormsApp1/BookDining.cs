@@ -30,14 +30,14 @@ namespace assignment2
             // Create a reservation
             string reservation = $"{roomNumber},{selectedDate},{selectedTime},{numberOfPeople}";
 
-            // Save the reservation to a text file, separating reservations by room number.
+            // Save the reservation to a text file, separated by room number.
             string reservationsFile = "DinnerReservations.txt";
             File.AppendAllText(reservationsFile, reservation + Environment.NewLine);
 
-            // Provide feedback to the user (optional).
+            // Provide feedback
             MessageBox.Show("Reservation made successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            // Close the form or perform any other actions as needed.
+            // Close the form
             this.Close();
         }
     }
