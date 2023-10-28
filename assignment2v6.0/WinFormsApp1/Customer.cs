@@ -96,5 +96,11 @@ namespace assignment2
             //BookDining bookDining = new BookDining();
             bookDiningForm.Show();
         }
+
+        private void roomServiceButton_Click(object sender, EventArgs e)
+        {
+            AllDishes viewFood = new AllDishes();
+            viewFood.Show();
+        }
     }
 }

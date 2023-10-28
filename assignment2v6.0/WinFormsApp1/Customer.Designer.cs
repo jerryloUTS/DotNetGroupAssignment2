@@ -32,7 +32,6 @@
             welcomeLabel = new Label();
             roomNo = new Label();
             label3 = new Label();
-            label4 = new Label();
             bookingDetail = new Label();
             panel1 = new Panel();
             label7 = new Label();
@@ -45,6 +44,7 @@
             checkOutDate = new Label();
             label1 = new Label();
             label2 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,21 +72,11 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(25, 266);
+            label3.Location = new Point(25, 282);
             label3.Name = "label3";
-            label3.Size = new Size(74, 23);
+            label3.Size = new Size(112, 23);
             label3.TabIndex = 0;
-            label3.Text = "Contact:";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(25, 303);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 23);
-            label4.TabIndex = 0;
-            label4.Text = "Email:";
+            label3.Text = "Reservations:";
             // 
             // bookingDetail
             // 
@@ -158,10 +148,11 @@
             roomServiceButton.ForeColor = SystemColors.ActiveCaptionText;
             roomServiceButton.Location = new Point(67, 174);
             roomServiceButton.Name = "roomServiceButton";
-            roomServiceButton.Size = new Size(176, 42);
+            roomServiceButton.Size = new Size(176, 57);
             roomServiceButton.TabIndex = 0;
-            roomServiceButton.Text = "Room Service";
+            roomServiceButton.Text = "In-room Dining Menu";
             roomServiceButton.UseVisualStyleBackColor = false;
+            roomServiceButton.Click += roomServiceButton_Click;
             // 
             // bookDiningButton
             // 
@@ -195,9 +186,9 @@
             checkInDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             checkInDate.Location = new Point(131, 222);
             checkInDate.Name = "checkInDate";
-            checkInDate.Size = new Size(71, 20);
+            checkInDate.Size = new Size(39, 20);
             checkInDate.TabIndex = 3;
-            checkInDate.Text = "Check in:";
+            checkInDate.Text = "time";
             // 
             // checkOutDate
             // 
@@ -205,9 +196,9 @@
             checkOutDate.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point);
             checkOutDate.Location = new Point(342, 221);
             checkOutDate.Name = "checkOutDate";
-            checkOutDate.Size = new Size(81, 20);
+            checkOutDate.Size = new Size(39, 20);
             checkOutDate.TabIndex = 3;
-            checkOutDate.Text = "Check out:";
+            checkOutDate.Text = "time";
             // 
             // label1
             // 
@@ -229,11 +220,21 @@
             label2.TabIndex = 3;
             label2.Text = "Check in:";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(29, 323);
+            label4.Name = "label4";
+            label4.Size = new Size(108, 20);
+            label4.TabIndex = 4;
+            label4.Text = "reservationInfo";
+            // 
             // Customer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label4);
             Controls.Add(checkOutDate);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -241,7 +242,6 @@
             Controls.Add(exitButton);
             Controls.Add(panel1);
             Controls.Add(bookingDetail);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(roomNo);
             Controls.Add(welcomeLabel);
@@ -258,7 +258,6 @@
         private Label welcomeLabel;
         private Label roomNo;
         private Label label3;
-        private Label label4;
         private Label bookingDetail;
         private Panel panel1;
         private Button bookDiningButton;
@@ -271,5 +270,6 @@
         private Label checkOutDate;
         private Label label1;
         private Label label2;
+        private Label label4;
     }
 }
