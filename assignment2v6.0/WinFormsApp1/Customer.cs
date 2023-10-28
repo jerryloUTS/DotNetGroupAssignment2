@@ -61,11 +61,11 @@ namespace assignment2
                             return roomNumber;
                         }
 
-                        else 
-                        { 
-                           roomNo.Text += " No room assigned yet.";
+                        /*else
+                        {
+                            roomNo.Text += " No room assigned yet.";
                             break;
-                        }
+                        }*/
                     }
                 }
             }

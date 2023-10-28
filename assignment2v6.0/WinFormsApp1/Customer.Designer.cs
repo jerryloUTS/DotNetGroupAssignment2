@@ -33,7 +33,7 @@
             roomNo = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
+            bookingDetail = new Label();
             panel1 = new Panel();
             label7 = new Label();
             label6 = new Label();
@@ -84,15 +84,15 @@
             label4.TabIndex = 0;
             label4.Text = "Email:";
             // 
-            // label5
+            // bookingDetail
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
-            label5.Location = new Point(25, 168);
-            label5.Name = "label5";
-            label5.Size = new Size(126, 23);
-            label5.TabIndex = 0;
-            label5.Text = "Booking Detail:";
+            bookingDetail.AutoSize = true;
+            bookingDetail.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point);
+            bookingDetail.Location = new Point(25, 168);
+            bookingDetail.Name = "bookingDetail";
+            bookingDetail.Size = new Size(126, 23);
+            bookingDetail.TabIndex = 0;
+            bookingDetail.Text = "Booking Detail:";
             // 
             // panel1
             // 
@@ -191,7 +191,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(exitButton);
             Controls.Add(panel1);
-            Controls.Add(label5);
+            Controls.Add(bookingDetail);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(roomNo);
@@ -210,7 +210,7 @@
         private Label roomNo;
         private Label label3;
         private Label label4;
-        private Label label5;
+        private Label bookingDetail;
         private Panel panel1;
         private Button bookDiningButton;
         private Label label6;
