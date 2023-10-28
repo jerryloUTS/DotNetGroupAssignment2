@@ -31,35 +31,39 @@ namespace assignment2
         private void button2_Click(object sender, EventArgs e)
         {
             var lines = File.ReadAllLines("login.txt");
+            var lines1 = File.ReadAllLines("customerDB.txt");
             //if (!File.Exists(deleteCustomerTxtBox.Text + ".txt"))
             //{
             //    MessageBox.Show("no", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                
+
             //}
             //else if (File.Exists(deleteCustomerTxtBox.Text + ".txt"))
             //{
-                if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text))
+            if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            {
+                MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            {
+                DialogResult dialogResult = MessageBox.Show("User found. Would you like to delete " + deleteUsernameTxtBox.Text + "?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                }
-                if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text))
-                {
-                    DialogResult dialogResult = MessageBox.Show("User found. Would you like to delete " + deleteUsernameTxtBox.Text + "?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-                    if (dialogResult == DialogResult.Yes)
-                    {
                     File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList());
-                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "" + deletePasswordTxtBox.Text)).ToList());
-
-
+                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList());
                     File.Delete(deleteUsernameTxtBox.Text + ".txt");
-                    }
+                }
 
-                    if (dialogResult == DialogResult.No)
-                    {
-                        
-                    }
+                if (dialogResult == DialogResult.No)
+                {
 
                 }
+
+            }
+
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            {
+                MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
             //}
         }
 
@@ -74,6 +78,11 @@ namespace assignment2
         }
 
         private void deletePasswordTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
