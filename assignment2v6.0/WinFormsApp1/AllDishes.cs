@@ -31,10 +31,10 @@ namespace assignment2
         private void OpenBtn_Click(object sender, EventArgs e)
         {
             richTextBox1.Clear();
-            var fileLocation = File.ReadAllLines("dishDisplay.txt");           
+            var fileLocation = File.ReadAllLines("dish.txt");           
             List<string> lines = new List<string>(fileLocation);
             List<string> dishInfo = new List<string>();
-            dishInfo = File.ReadAllLines("dishDisplay.txt").ToList();
+            dishInfo = File.ReadAllLines("dish.txt").ToList();
             foreach (var line in dishInfo)
             {
                 string[] dishSplit = line.Split(',');
