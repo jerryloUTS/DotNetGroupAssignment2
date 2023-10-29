@@ -56,6 +56,11 @@ namespace assignment2
             {
                 MessageBox.Show("Please Input the numbers of guests", "Not all fields entered", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+            //checks if either of the dates are within range, for example if the check in date is greater then the checkout date, it should display an error.
+            else if (checkInDate > checkOutDate)
+            {
+                MessageBox.Show("The check out date must be equal or greater then the check in date.", "Invalid Date Selection.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
             else if (IsAnyRoomsBooked(roomBookings, newBooking))
             {
                 MessageBox.Show("Sorry, this room is already booked by someone else.", "Room Already Taken", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -152,11 +157,6 @@ namespace assignment2
             if (currentBooking.RoomId == newBooking.RoomId)
             {
                 //then a nested if statements occurrs to check the booking dates for that specific room.
-                //only checks the actual edge cases.
-                /*if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
-                {
-                    return true;
-                }*/
                 //checks the date ranges if hotel room is already booked for some or all of the selected dates.
                 if (currentBooking.CheckInDate < newBooking.CheckOutDate && newBooking.CheckInDate < currentBooking.CheckOutDate)
                 {
@@ -191,6 +191,9 @@ namespace assignment2
         {
             //displays a message with the customer username and room code.
             lblBookingInfo.Text = "You are Booking a room for " + customerUserName + " in Room #" + roomCode;
+            //sets the min date range for the date time pickers so they can only book for days ahead.
+            dtpCheckInDate.MinDate = DateTime.Now;
+            dtpCheckOutDate.MinDate = DateTime.Now;
         }
 
         //this is a helperfunction that will combine both the date and times from seperate form controls.
@@ -203,6 +206,8 @@ namespace assignment2
         {
             try
             {
+                //displays the busy cursor symbol on the mouse pointer to the user while the smtp client connects to the server
+                Cursor.Current = Cursors.WaitCursor;
                 string customerName = "";
                 string customerEmail = "";
                 foreach(string line in File.ReadAllLines(this.customerUserName + ".txt"))
@@ -221,6 +226,11 @@ namespace assignment2
             catch(Exception ex)
             {
                 Debug.WriteLine("Unable to send email " + ex.Message);
+            }
+            finally
+            {
+                //returns back to a normal cursor.
+                Cursor.Current = Cursors.Default;
             }
         }
     }

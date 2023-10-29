@@ -90,12 +90,12 @@ namespace assignment2
                     row["dependents"] = splits[6];
                     bookedRooms.Rows.Add(row);
                 }
-            } 
-            catch(FileNotFoundException) 
-            {
-                MessageBox.Show("An error has occurred when loading saved bookings from disk.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
-            
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("An error has occurred when loading saved bookings from disk.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         //this is a function that will be used for converting dates from a string into a dateTime object and convert it back to string, it will be used to display the appropriate date formats and a time in a seperate column
@@ -107,7 +107,7 @@ namespace assignment2
                 string shortDateFormat = date.ToString("dd/MM/yyyy");
                 return shortDateFormat;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 DateTime date = DateTime.ParseExact(dateTimeStr, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
                 string shortDateFormat = date.ToString("dd/MM/yyyy");
@@ -131,7 +131,12 @@ namespace assignment2
                 return timeDateFormat;
             }
 
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
