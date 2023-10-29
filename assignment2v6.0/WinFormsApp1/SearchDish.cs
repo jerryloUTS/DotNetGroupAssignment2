@@ -35,11 +35,11 @@ namespace assignment2
             else if (File.Exists(dishSearch.Text + ".txt"))
             {
                 
-                if (!lines.Contains(dishSearch.Text))
+                if (!lines.Contains(dishSearch.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     MessageBox.Show("Dish not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (lines.Contains(dishSearch.Text))
+                if (lines.Contains(dishSearch.Text, StringComparison.OrdinalIgnoreCase))
                 {
                     richTextBox1.Clear();
                     List<string> dishInfo = new List<string>();
