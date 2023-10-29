@@ -21,7 +21,7 @@ namespace assignment2
             this.phone = phone;
             this.address = address;
             this.dob = dob;
-            StreamWriter file = new StreamWriter("login.txt", true);
+            StreamWriter file = new StreamWriter("login.txt", true); //Writes user input into "login.txt" according to user input.
             file.WriteLine(username + "," + password);
             file.Close();
         }
