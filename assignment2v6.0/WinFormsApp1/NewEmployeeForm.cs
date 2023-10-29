@@ -39,9 +39,22 @@ namespace assignment2
                 MessageBox.Show("Email cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return false;
             }
+
+            else if (!emailTxtBox.Text.Contains("@gmail.com") || !emailTxtBox.Text.Contains("@hotmail.com") || !emailTxtBox.Text.Contains("@uts.edu.au"))
+            {
+                MessageBox.Show("Invalid email.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return false;
+            }
+
             else if (String.IsNullOrEmpty(phoneTxtBox.Text))
             {
                 MessageBox.Show("Phone number cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return false;
+            }
+
+            else if ((phoneTxtBox.Text).Length < 10)
+            {
+                MessageBox.Show("Invalid phone number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return false;
             }
 
@@ -57,11 +70,6 @@ namespace assignment2
                 return false;
             }
 
-            else if (String.IsNullOrEmpty(employeeTypeBox.Text))
-            {
-                MessageBox.Show("Employee type cannot be empty.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                return false;
-            }
 
             else if (String.IsNullOrEmpty(stateComboBox.Text))
             {
@@ -104,7 +112,7 @@ namespace assignment2
             {
                 string address = addressTxtBox.Text + " " + cityTxtBox.Text + " " + stateComboBox.Text;
                 User user = new User(userTxtBox.Text, passTxtBox.Text, fNameTxtBox.Text, surnameTxtBox.Text, emailTxtBox.Text, phoneTxtBox.Text, address, dobPicker.Text);
-                string userInfo = (fNameTxtBox.Text + " " + surnameTxtBox.Text + "|" + emailTxtBox.Text + "|" + phoneTxtBox.Text + "|" + address + "|" + dobPicker.Text + "|Role: " + employeeTypeBox.Text);
+                string userInfo = (fNameTxtBox.Text + " " + surnameTxtBox.Text + "|" + emailTxtBox.Text + "|" + phoneTxtBox.Text + "|" + address + "|" + dobPicker.Text + "|Role: Receptionist");
                 MessageBox.Show("Account has been created.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 File.AppendAllText("employeeDB.txt", fNameTxtBox.Text + " " + surnameTxtBox.Text + "\n");
                 File.WriteAllText(userTxtBox.Text + ".txt", userInfo);
