@@ -39,7 +39,7 @@ namespace assignment2
             //}
             //else if (File.Exists(deleteCustomerTxtBox.Text + ".txt"))
             //{
-            if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Returns error if text files don't contain user input from either text field.
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -60,7 +60,7 @@ namespace assignment2
 
             }
 
-            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Returns error if "customerDB.txt" does not contain user input.
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
