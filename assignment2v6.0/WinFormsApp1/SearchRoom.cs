@@ -49,7 +49,7 @@ namespace assignment2
 
                 if (!lines.Contains(roomSearch.Text))
                 {
-                    MessageBox.Show("Room " + roomSearch.Text + " was not found., "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Room " + roomSearch.Text + " was not found.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 if (lines.Contains(roomSearch.Text))
