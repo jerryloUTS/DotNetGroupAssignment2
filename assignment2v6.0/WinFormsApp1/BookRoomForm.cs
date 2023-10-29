@@ -64,6 +64,8 @@ namespace assignment2
             {
                 //stores it into a text file
                 AddToTxtFile(newBooking);
+                //sends the email to the customer
+                EmailBookingConfirmation(newBooking);
                 MessageBox.Show("Room has been booked sucecsessfuly.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 formComplete = true;
                 this.Close();
@@ -104,7 +106,7 @@ namespace assignment2
 
             }
             //this will try another way of parsing dates if a format exception has occurred.
-            catch(FormatException)
+            /*catch(FormatException)
             {
                 List<RoomBooking> alternateRoomBookings = new List<RoomBooking>();
                 
@@ -129,7 +131,7 @@ namespace assignment2
                 return alternateRoomBookings;
 
                 
-            }
+            }*/
             //this will not cause the program to crash if there is no file found, it will just display a message on the debug line.
             catch (FileNotFoundException)
             {
@@ -195,6 +197,31 @@ namespace assignment2
         private DateTime CombineDateAndTimeFields(DateTime dateFieldValue, DateTime timeFieldValue)
         {
             return dateFieldValue.Date + timeFieldValue.TimeOfDay;
+        }
+
+        private void EmailBookingConfirmation(RoomBooking roomBooking)
+        {
+            try
+            {
+                string customerName = "";
+                string customerEmail = "";
+                foreach(string line in File.ReadAllLines(this.customerUserName + ".txt"))
+                {
+                    string[] splits = line.Split('|');
+                    customerName = splits[0];
+                    customerEmail = splits[1];
+                }
+                //sends the request
+                MailManager.SendBookingConfirmation(customerName, customerEmail, roomBooking);
+            }
+            catch(FileNotFoundException)
+            {
+                Debug.WriteLine("Unable to send confirmation email because the text file was not found.");
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Unable to send email " + ex.Message);
+            }
         }
     }
 

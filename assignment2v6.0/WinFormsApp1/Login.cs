@@ -110,7 +110,7 @@ namespace assignment2
                             if (temp[0] == userTxtBx.Text && temp[1] == PassTxtbox.Text)
                             {
                                 Hide();
-                                new ReceptionistForm(this, username).Show();
+                                new ReceptionistForm(this, userTxtBx.Text).Show();
                                 loggedin = true;
                             }
                             else if (temp[0] == userTxtBx.Text && temp[1] != PassTxtbox.Text)

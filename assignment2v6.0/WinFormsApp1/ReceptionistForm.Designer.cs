@@ -41,7 +41,7 @@
             btnBook = new Button();
             lbCustomers = new ListBox();
             lbRooms = new ListBox();
-            label1 = new Label();
+            lblGreeting = new Label();
             label2 = new Label();
             label3 = new Label();
             btnLogOut = new Button();
@@ -152,15 +152,15 @@
             lbRooms.Size = new Size(210, 204);
             lbRooms.TabIndex = 4;
             // 
-            // label1
+            // lblGreeting
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(19, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(50, 20);
-            label1.TabIndex = 5;
-            label1.Text = "label1";
-            label1.Click += label1_Click;
+            lblGreeting.AutoSize = true;
+            lblGreeting.Location = new Point(19, 62);
+            lblGreeting.Name = "lblGreeting";
+            lblGreeting.Size = new Size(50, 20);
+            lblGreeting.TabIndex = 5;
+            lblGreeting.Text = "label1";
+            lblGreeting.Click += label1_Click;
             // 
             // label2
             // 
@@ -201,7 +201,7 @@
             Controls.Add(btnLogOut);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblGreeting);
             Controls.Add(lbRooms);
             Controls.Add(lbCustomers);
             Controls.Add(btnBook);
@@ -229,7 +229,7 @@
         private Button btnBook;
         private ListBox lbCustomers;
         private ListBox lbRooms;
-        private Label label1;
+        private Label lblGreeting;
         private Label label2;
         private Label label3;
         private Button btnLogOut;
