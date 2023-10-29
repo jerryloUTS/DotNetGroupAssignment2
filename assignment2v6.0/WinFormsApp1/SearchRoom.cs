@@ -13,9 +13,17 @@ namespace assignment2
 {
     public partial class SearchRoom : Form
     {
+        private string roomCode;
         public SearchRoom()
         {
             InitializeComponent();
+            this.roomCode = "";
+        }
+
+        public SearchRoom(string roomCode)
+        {
+            InitializeComponent();
+            this.roomCode = roomCode;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,14 +37,14 @@ namespace assignment2
         }
 
         private void button2_Click(object sender, EventArgs e)
-        { 
+        {
             var lines = File.ReadAllText("roomDisplay.txt");
             if (!File.Exists("Room " + roomSearch.Text + ".txt"))
             {
                 MessageBox.Show("Room " + roomSearch.Text + " was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             if (File.Exists("Room " + roomSearch.Text + ".txt"))
-            {              
+            {
 
                 if (!lines.Contains(roomSearch.Text))
                 {
@@ -64,6 +72,11 @@ namespace assignment2
 
                 }
             }
+        }
+
+        private void SearchRoom_Load(object sender, EventArgs e)
+        {
+            roomSearch.Text = roomCode;
         }
     }
 }

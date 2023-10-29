@@ -36,6 +36,7 @@
             viewAllBookingsToolStripMenuItem = new ToolStripMenuItem();
             viewIncidentReportsMenuItem = new ToolStripMenuItem();
             viewDinnerReservationsToolStripMenuItem = new ToolStripMenuItem();
+            getSpecificRoomDetailsToolStripMenuItem = new ToolStripMenuItem();
             foodToolStripMenuItem = new ToolStripMenuItem();
             viewMenuToolStripMenuItem = new ToolStripMenuItem();
             btnBook = new Button();
@@ -70,7 +71,7 @@
             // 
             // manageToolStripMenuItem
             // 
-            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem, viewIncidentReportsMenuItem, viewDinnerReservationsToolStripMenuItem });
+            manageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewAllCustomersToolStripMenuItem, reportIncidentToolStripMenuItem, viewAllBookingsToolStripMenuItem, viewIncidentReportsMenuItem, viewDinnerReservationsToolStripMenuItem, getSpecificRoomDetailsToolStripMenuItem });
             manageToolStripMenuItem.Name = "manageToolStripMenuItem";
             manageToolStripMenuItem.Size = new Size(77, 24);
             manageToolStripMenuItem.Text = "Manage";
@@ -78,36 +79,43 @@
             // viewAllCustomersToolStripMenuItem
             // 
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
-            viewAllCustomersToolStripMenuItem.Size = new Size(259, 26);
+            viewAllCustomersToolStripMenuItem.Size = new Size(265, 26);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
             // 
             // reportIncidentToolStripMenuItem
             // 
             reportIncidentToolStripMenuItem.Name = "reportIncidentToolStripMenuItem";
-            reportIncidentToolStripMenuItem.Size = new Size(259, 26);
+            reportIncidentToolStripMenuItem.Size = new Size(265, 26);
             reportIncidentToolStripMenuItem.Text = "Report Incident";
             reportIncidentToolStripMenuItem.Click += reportIncidentToolStripMenuItem_Click;
             // 
             // viewAllBookingsToolStripMenuItem
             // 
             viewAllBookingsToolStripMenuItem.Name = "viewAllBookingsToolStripMenuItem";
-            viewAllBookingsToolStripMenuItem.Size = new Size(259, 26);
+            viewAllBookingsToolStripMenuItem.Size = new Size(265, 26);
             viewAllBookingsToolStripMenuItem.Text = "View All Bookings";
             viewAllBookingsToolStripMenuItem.Click += viewAllBookingsToolStripMenuItem_Click;
             // 
             // viewIncidentReportsMenuItem
             // 
             viewIncidentReportsMenuItem.Name = "viewIncidentReportsMenuItem";
-            viewIncidentReportsMenuItem.Size = new Size(259, 26);
+            viewIncidentReportsMenuItem.Size = new Size(265, 26);
             viewIncidentReportsMenuItem.Text = "View Incident Reports";
             viewIncidentReportsMenuItem.Click += viewIncidentReportsMenuItem_Click;
             // 
             // viewDinnerReservationsToolStripMenuItem
             // 
             viewDinnerReservationsToolStripMenuItem.Name = "viewDinnerReservationsToolStripMenuItem";
-            viewDinnerReservationsToolStripMenuItem.Size = new Size(259, 26);
+            viewDinnerReservationsToolStripMenuItem.Size = new Size(265, 26);
             viewDinnerReservationsToolStripMenuItem.Text = "View Dinner Reservations";
             viewDinnerReservationsToolStripMenuItem.Click += viewDinnerReservationsToolStripMenuItem_Click;
+            // 
+            // getSpecificRoomDetailsToolStripMenuItem
+            // 
+            getSpecificRoomDetailsToolStripMenuItem.Name = "getSpecificRoomDetailsToolStripMenuItem";
+            getSpecificRoomDetailsToolStripMenuItem.Size = new Size(265, 26);
+            getSpecificRoomDetailsToolStripMenuItem.Text = "Get Specific Room Details";
+            getSpecificRoomDetailsToolStripMenuItem.Click += getSpecificRoomDetailsToolStripMenuItem_Click;
             // 
             // foodToolStripMenuItem
             // 
@@ -236,5 +244,6 @@
         private ToolStripMenuItem viewAllBookingsToolStripMenuItem;
         private ToolStripMenuItem viewIncidentReportsMenuItem;
         private ToolStripMenuItem viewDinnerReservationsToolStripMenuItem;
+        private ToolStripMenuItem getSpecificRoomDetailsToolStripMenuItem;
     }
 }

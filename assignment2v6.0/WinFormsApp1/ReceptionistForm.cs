@@ -30,8 +30,10 @@ namespace assignment2
             DialogResult dResult = addCustomerForm.ShowDialog();
             if (dResult == DialogResult.OK)
             {
-                //refreshes the datatable
-                this.Refresh();
+                //refreshes the datatables for the list boxes.
+                ReloadAllDataTables();
+                lbCustomers.DataSource = customerDataTable;
+                lbRooms.DataSource = roomsDataTable;
             }
 
         }
@@ -41,6 +43,15 @@ namespace assignment2
         private void lbCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void ReloadAllDataTables()
+        {
+            //clears all data from the data tables.
+            customerDataTable.Clear();
+            roomsDataTable.Clear();
+            //reloads the data from the text file
+            FetchCustomerFromDB();
+            FetchRoomsFromTxt();
         }
 
         private void ReceptionistForm_Load(object sender, EventArgs e)
@@ -57,14 +68,14 @@ namespace assignment2
             try
             {
                 string name = "";
-                foreach(string line in File.ReadAllLines(this.username + ".txt"))
+                foreach (string line in File.ReadAllLines(this.username + ".txt"))
                 {
                     string[] splits = line.Split('|');
                     name = splits[0];
                 }
                 lblGreeting.Text = "Hello " + name;
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 lblGreeting.Text = "Unable to find name";
             }
@@ -114,7 +125,7 @@ namespace assignment2
         private void AddCustomersToDataTable()
         {
             AddCustColumns();
-            AddCustomerDataFromDB();
+            FetchCustomerFromDB();
             RefreshCustomerList();
 
         }
@@ -145,7 +156,7 @@ namespace assignment2
 
         }
 
-        private void AddCustomerDataFromDB()
+        private void FetchCustomerFromDB()
         {
             foreach (string line in File.ReadAllLines("customerDB.txt"))
             {
@@ -198,6 +209,13 @@ namespace assignment2
         {
             viewReservations diningReservations = new viewReservations();
             diningReservations.Show();
+        }
+
+        private void getSpecificRoomDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchRoom searchRoom = new SearchRoom((String)lbRooms.SelectedValue);
+            searchRoom.Show();
+
         }
     }
 }
