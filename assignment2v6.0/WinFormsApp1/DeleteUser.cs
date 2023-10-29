@@ -51,6 +51,7 @@ namespace assignment2
                     File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
                     File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
                     File.Delete(deleteUsernameTxtBox.Text + ".txt"); //Deletes the file with the user input in its name. e.g. if the user input is "customer", then it deletes "customer.txt"
+                    MessageBox.Show(deleteUsernameTxtBox.Text + " has been deleted. ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //Confirmation of the user deletion
                 }
 
                 if (dialogResult == DialogResult.No)
