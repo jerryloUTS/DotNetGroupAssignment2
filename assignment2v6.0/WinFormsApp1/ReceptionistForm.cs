@@ -17,6 +17,7 @@ namespace assignment2
         private DataTable roomsDataTable = new DataTable();
         private string username;
         private LoginForm loginForm; //passes login information from the logged in user.
+        private string receptionistName = "";
         public ReceptionistForm(LoginForm loginForm, string username)
         {
             InitializeComponent();
@@ -67,13 +68,13 @@ namespace assignment2
         {
             try
             {
-                string name = "";
+                
                 foreach (string line in File.ReadAllLines(this.username + ".txt"))
                 {
                     string[] splits = line.Split('|');
-                    name = splits[0];
+                    receptionistName = splits[0];
                 }
-                lblGreeting.Text = "Hello " + name;
+                lblGreeting.Text = "Hello " + receptionistName;
             }
             catch (FileNotFoundException)
             {
@@ -86,7 +87,7 @@ namespace assignment2
             //read selecttion from listboxes.
             string customerUsername = (string)lbCustomers.SelectedValue;
             int roomCode = Convert.ToInt32((String)lbRooms.SelectedValue);
-            BookRoomForm bookRoom = new BookRoomForm(customerUsername, roomCode);
+            BookRoomForm bookRoom = new BookRoomForm(receptionistName, customerUsername, roomCode);
             bookRoom.ShowDialog();
 
         }
@@ -216,6 +217,12 @@ namespace assignment2
             SearchRoom searchRoom = new SearchRoom((String)lbRooms.SelectedValue);
             searchRoom.Show();
 
+        }
+
+        private void viewAllCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllCustomers allCustomers = new AllCustomers();
+            allCustomers.Show();
         }
     }
 }

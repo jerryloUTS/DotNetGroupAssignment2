@@ -15,14 +15,16 @@ namespace assignment2
     public partial class BookRoomForm : Form
     {
         private string customerUserName;
+        private string receptionistName;
         private int roomCode;
         private bool formComplete = false;
         public bool FormComplete { get => formComplete; set => formComplete = value; }
 
-        public BookRoomForm(string customerUserName, int roomCode)
+        public BookRoomForm(string receptionistName, string customerUserName, int roomCode)
         {
             InitializeComponent();
             this.customerUserName = customerUserName;
+            this.receptionistName = receptionistName;
             this.roomCode = roomCode;
 
         }
@@ -111,7 +113,7 @@ namespace assignment2
 
             }
             //this will try another way of parsing dates if a format exception has occurred.
-            /*catch(FormatException)
+            catch(FormatException)
             {
                 List<RoomBooking> alternateRoomBookings = new List<RoomBooking>();
                 
@@ -136,13 +138,13 @@ namespace assignment2
                 return alternateRoomBookings;
 
                 
-            }*/
+            }
             //this will not cause the program to crash if there is no file found, it will just display a message on the debug line.
             catch (FileNotFoundException)
             {
                 Debug.WriteLine("The file is not found, you can create a new booking");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
@@ -210,20 +212,20 @@ namespace assignment2
                 Cursor.Current = Cursors.WaitCursor;
                 string customerName = "";
                 string customerEmail = "";
-                foreach(string line in File.ReadAllLines(this.customerUserName + ".txt"))
+                foreach (string line in File.ReadAllLines(this.customerUserName + ".txt"))
                 {
                     string[] splits = line.Split('|');
                     customerName = splits[0];
                     customerEmail = splits[1];
                 }
                 //sends the request
-                MailManager.SendBookingConfirmation(customerName, customerEmail, roomBooking);
+                MailManager.SendBookingConfirmation(receptionistName, customerName, customerEmail, roomBooking);
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 Debug.WriteLine("Unable to send confirmation email because the text file was not found.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine("Unable to send email " + ex.Message);
             }

@@ -62,7 +62,7 @@
             Controls.Add(dgvAllBookings);
             Controls.Add(button1);
             Name = "AllBookings";
-            Text = "AllBookings";
+            Text = "View All Bookings";
             Load += AllBookings_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAllBookings).EndInit();
             ResumeLayout(false);

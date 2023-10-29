@@ -81,6 +81,7 @@
             viewAllCustomersToolStripMenuItem.Name = "viewAllCustomersToolStripMenuItem";
             viewAllCustomersToolStripMenuItem.Size = new Size(265, 26);
             viewAllCustomersToolStripMenuItem.Text = "View All Customers";
+            viewAllCustomersToolStripMenuItem.Click += viewAllCustomersToolStripMenuItem_Click;
             // 
             // reportIncidentToolStripMenuItem
             // 
@@ -217,7 +218,7 @@
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Name = "ReceptionistForm";
-            Text = "ReceptionistForm";
+            Text = "Receptionist";
             Load += ReceptionistForm_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

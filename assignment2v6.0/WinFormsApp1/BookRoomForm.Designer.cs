@@ -214,7 +214,7 @@
             Controls.Add(lblBookingInfo);
             Controls.Add(groupBox1);
             Name = "BookRoomForm";
-            Text = "BookRoomForm";
+            Text = "Book Room";
             Load += BookRoomForm_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
