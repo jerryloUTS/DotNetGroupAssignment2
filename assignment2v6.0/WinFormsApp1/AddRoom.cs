@@ -90,57 +90,57 @@ namespace assignment2
             int roomID = makeRoomID();
             if (isFormComplete() == true)
             {
-                if (tvCheckBox.Checked && wifiCheckBox.Checked)
+                if (tvCheckBox.Checked && wifiCheckBox.Checked) //Creates a room object with both TV & Wi-Fi checked.
                 {
-                    int count = (File.ReadLines("rooms.txt").Count()) + 1;
+                    int count = (File.ReadLines("rooms.txt").Count()) + 1; //Reads number of lines in file to determine how many lines there are for an accurate ID. Adds 1 to prevent an initial ID of 000.
                     string roomInfo = (count + "00" + "," + sizeTxtBox.Text + "m," + bedTxtBox.Text + "," + sightTxtBox.Text + "," + wifi + "," + tv + "," + "$" + priceTxtBox.Text + "," + AdditionalInformationBox.Text);
                     string roomDisplay = ("Room ID: " + count++ + "00" + "\n" + "Room Size: " + sizeTxtBox.Text + "\n" + "Bed Size:" + bedTxtBox.Text + "\n" + "Sight: " + sightTxtBox.Text + "\n" + "Features: " + tv + ", " + wifi + "\n" + "Price: $" + priceTxtBox.Text + "\n" + "Additional Info: " + AdditionalInformationBox.Text + "\n");
                     MessageBox.Show("Room has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     File.AppendAllText("rooms.txt", roomInfo + "\n");
-                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n");
+                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n"); //Determines room ID and states said ID as the name of the file.
                     File.AppendAllText("roomDisplay.txt", roomDisplay + "\n");
                     Close();
                 }
 
-                else if (wifiCheckBox.Checked)
+                else if (wifiCheckBox.Checked) //Creates a room object with Wi-Fi checked.
                 {
-                    int count = (File.ReadLines("rooms.txt").Count()) + 1;
+                    int count = (File.ReadLines("rooms.txt").Count()) + 1; //Reads number of lines in file to determine how many lines there are for an accurate ID. Adds 1 to prevent an initial ID of 000.
                     string roomInfo = (count + "00" + "," + sizeTxtBox.Text + "m," + bedTxtBox.Text + "," + sightTxtBox.Text + "," + wifi + "," + ",$" + priceTxtBox.Text + "," + AdditionalInformationBox.Text);
                     string roomDisplay = ("Room ID: " + count++ + "\n" + "Room Size: " + sizeTxtBox.Text + "\n" + "Bed Size: " + bedTxtBox.Text + "\n" + "Sight: " + sightTxtBox.Text + "\n" + "Features: " + wifi + "\n" + "Price: $" + priceTxtBox.Text + "\n" + "Additional Info: " + AdditionalInformationBox.Text + "\n");
                     MessageBox.Show("Room has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     File.AppendAllText("rooms.txt", roomInfo + "\n");
-                    File.WriteAllText("Room " + (count-1 + "00") + ".txt", roomInfo + "\n");
+                    File.WriteAllText("Room " + (count-1 + "00") + ".txt", roomInfo + "\n"); //Determines room ID and states said ID as the name of the file.
                     File.AppendAllText("roomDisplay.txt", roomDisplay + "\n");
                     Close();
                 }
 
-                else if (tvCheckBox.Checked)
+                else if (tvCheckBox.Checked) //Creates a room object with TV.
                 {
-                    int count = (File.ReadLines("rooms.txt").Count()) + 1;
+                    int count = (File.ReadLines("rooms.txt").Count()) + 1; //Reads number of lines in file to determine how many lines there are for an accurate ID. Adds 1 to prevent an initial ID of 000.
                     string roomInfo = (count + "00" + "," + sizeTxtBox.Text + "m," + bedTxtBox.Text + "," + sightTxtBox.Text + "," + tv + "," + ",$" + priceTxtBox.Text + "," + AdditionalInformationBox.Text);
                     string roomDisplay = ("Room ID: " + count++ + "\n" + "Room Size: " + sizeTxtBox.Text + "\n" + "Bed Size: " + bedTxtBox.Text + "\n" + "Sight: " + sightTxtBox.Text + "\n" + "Features: " + tv + "\n" + "Price: $" + priceTxtBox.Text + "\n" + "Additional Info: " + AdditionalInformationBox.Text + "\n");
                     MessageBox.Show("Room " + count + "00 " + "has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     File.AppendAllText("rooms.txt", roomInfo + "\n");
-                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n");
+                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n"); //Determines room ID and states said ID as the name of the file.
                     File.AppendAllText("roomDisplay.txt", roomDisplay + "\n");
                     Close();
                 }
 
-                else if (!(wifiCheckBox.Checked) && !(tvCheckBox.Checked)) 
+                else if (!(wifiCheckBox.Checked) && !(tvCheckBox.Checked))  //Creates a room object with neither TV nor Wi-Fi checked.
                 {
-                    int count = (File.ReadLines("rooms.txt").Count()) + 1; ;
+                    int count = (File.ReadLines("rooms.txt").Count()) + 1; ; //Reads number of lines in file to determine how many lines there are for an accurate ID. Adds 1 to prevent an initial ID of 000.
                     string roomInfo = (count + "00" + "," + sizeTxtBox.Text + "," + bedTxtBox.Text + "," + sightTxtBox.Text + ",$" + priceTxtBox.Text + "," + AdditionalInformationBox.Text);
                     string roomDisplay = ("Room ID: " + count++ + "\n" + "Room Size: " + sizeTxtBox.Text + "\n" + "Bed Size: " + bedTxtBox.Text + "\n" + "Sight: " + sightTxtBox.Text + "\n" + "Features: " + "N/A" + "\n" + "Price: $" + priceTxtBox.Text + "\n" + "Additional Info: " + AdditionalInformationBox.Text + "\n\n");
                     MessageBox.Show("Room has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     File.AppendAllText("rooms.txt", roomInfo + "\n");
-                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n");
+                    File.WriteAllText("Room " + (count - 1 + "00") + ".txt", roomInfo + "\n"); //Determines room ID and states said ID as the name of the file.
 
                     File.AppendAllText("roomDisplay.txt", roomDisplay + "\n");
                     Close();
                 }
             }
         }
-        public static int makeRoomID()
+        public static int makeRoomID() //Creates room ID
         {
             for (int i = 1; i < 9999999; i++) //generates code beginning from 10000
             {
