@@ -26,7 +26,7 @@ namespace assignment2
             this.roomCode = roomCode;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Closes SearchRoom
         {
             Close();
         }
@@ -39,16 +39,17 @@ namespace assignment2
         private void button2_Click(object sender, EventArgs e)
         {
             var lines = File.ReadAllText("roomDisplay.txt");
-            if (!File.Exists("Room " + roomSearch.Text + ".txt"))
+            if (!File.Exists("Room " + roomSearch.Text + ".txt")) //Checks if user input exists as a text file; if it does not exist, this error shows.
             {
                 MessageBox.Show("Room " + roomSearch.Text + " was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (File.Exists("Room " + roomSearch.Text + ".txt"))
-            {
+
+            if (File.Exists("Room " + roomSearch.Text + ".txt")) //Displays user information assuming the user input is valid.
+            {             
 
                 if (!lines.Contains(roomSearch.Text))
                 {
-                    MessageBox.Show("no", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Room " + roomSearch.Text + " was not found., "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 if (lines.Contains(roomSearch.Text))

@@ -1,7 +1,1 @@
-Dish: Beacon and Eggs
-Price: $20
-Calories (kJ): 900kJ
-Meal Type: Main
-Allergens: No
-Additional Information: with tomato sauce
-
+Beacon and Eggs,$20,Calories (kJ): 900kJ,Main,No,with tomato sauce

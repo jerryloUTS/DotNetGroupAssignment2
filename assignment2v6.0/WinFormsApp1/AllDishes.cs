@@ -43,7 +43,7 @@ namespace assignment2
                 richTextBox1.AppendText("Calories: " + dishSplit[2] + "\n");
                 richTextBox1.AppendText("Meal Type: " + dishSplit[3] + "\n");
                 richTextBox1.AppendText("Allergens: " + dishSplit[4] + "\n");
-                richTextBox1.AppendText("Additional Info: " + dishSplit[5] + "\n");
+                richTextBox1.AppendText("Additional Info: " + dishSplit[5] + "\n\n");
             }
         }
 

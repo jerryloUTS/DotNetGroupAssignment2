@@ -18,7 +18,7 @@ namespace assignment2
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //Closes DeleteUser
         {
             Close();
         }
@@ -39,18 +39,19 @@ namespace assignment2
             //}
             //else if (File.Exists(deleteCustomerTxtBox.Text + ".txt"))
             //{
-            if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (!lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Returns error if text files don't contain user input from either text field.
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Scans "login.txt" and "customerDB.txt" for user input.
             {
                 DialogResult dialogResult = MessageBox.Show("User found. Would you like to delete " + deleteUsernameTxtBox.Text + "?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList());
-                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList());
-                    File.Delete(deleteUsernameTxtBox.Text + ".txt");
+                    File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
+                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
+                    File.Delete(deleteUsernameTxtBox.Text + ".txt"); //Deletes the file with the user input in its name. e.g. if the user input is "customer", then it deletes "customer.txt"
+                    MessageBox.Show(deleteUsernameTxtBox.Text + " has been deleted. ", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); //Confirmation of the user deletion
                 }
 
                 if (dialogResult == DialogResult.No)
@@ -60,7 +61,7 @@ namespace assignment2
 
             }
 
-            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && !lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Returns error if "customerDB.txt" does not contain user input.
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

@@ -73,7 +73,7 @@ namespace assignment2
 
         }
 
-        private void CancelBtn_Click(object sender, EventArgs e)
+        private void CancelBtn_Click(object sender, EventArgs e) //Exit AddDish menu
         {
             Close();
         }
@@ -93,13 +93,13 @@ namespace assignment2
 
         }
             
-        private void SubmitBtn_Click_1(object sender, EventArgs e)
+        private void SubmitBtn_Click_1(object sender, EventArgs e) //Adds the dish created by user into dish.txt, [userinput].txt and the object.
         {
             if (isFormComplete() == true)
             {
                 string dishInfo = (DishTxtBox.Text + ",$" + PriceTxtBox.Text + "," + CalorieTxtBox.Text + "kJ," + DishType.Text + "," + AllergenTxtBox.Text + "," + AdditionalInfoBox.Text);
                 string dishDisplay = ("Dish: " + DishTxtBox.Text + "\nPrice: $" + PriceTxtBox.Text + "\nCalories (kJ): " + CalorieTxtBox.Text + "kJ\nMeal Type: " + DishType.Text + "\nAllergens: " + AllergenTxtBox.Text + "\nAdditional Information: " + AdditionalInfoBox.Text + "\n\n");
-                Dish dishes = new Dish(DishTxtBox.Text, PriceTxtBox.Text, CalorieTxtBox.Text, DishType.Text, AllergenTxtBox.Text, AdditionalInfoBox.Text);
+                Dish dishes = new Dish(DishTxtBox.Text, PriceTxtBox.Text, CalorieTxtBox.Text, DishType.Text, AllergenTxtBox.Text, AdditionalInfoBox.Text); //Refers to the Dish object with the user's input.
                 MessageBox.Show("Dish has been added.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 File.AppendAllText("dish.txt", dishInfo + "\n");
                 File.AppendAllText(DishTxtBox.Text + ".txt", dishInfo);
@@ -120,7 +120,7 @@ namespace assignment2
                 }
                 else
                 {
-
+        
                 }
             }
             return false;
