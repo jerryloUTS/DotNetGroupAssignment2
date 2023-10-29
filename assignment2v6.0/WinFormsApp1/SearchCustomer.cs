@@ -22,18 +22,18 @@ namespace assignment2
         {
             var lines = File.ReadAllText("login.txt");
             
-            if (!File.Exists(customerSearch.Text + ".txt"))
+            if (!File.Exists(customerSearch.Text + ".txt")) //Checks if user input exists as a text file; if it does not exist, this error shows.
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             
-            if (File.Exists(customerSearch.Text + ".txt") && !File.ReadAllLines(customerSearch.Text + ".txt").Contains("Role: Admin"))
+            if (File.Exists(customerSearch.Text + ".txt") && !File.ReadAllLines(customerSearch.Text + ".txt").Contains("Role: Admin")) //Checks if user input exists as a text file
             {
-                if (File.ReadAllLines(customerSearch.Text + ".txt").Contains("Role: Admin"))
+                if (File.ReadAllLines(customerSearch.Text + ".txt").Contains("Role: Admin")) //Ensures that any user files that belong to an admin do not display.
                 {
                     MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
-                if (lines.Contains(customerSearch.Text))
+                if (lines.Contains(customerSearch.Text)) //Displays user information assuming the user input is valid.
                 {
                     richTextBox1.Clear();
                     List<string> custInfo = new List<string>();
