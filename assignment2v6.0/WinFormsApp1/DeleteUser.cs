@@ -48,8 +48,8 @@ namespace assignment2
                 DialogResult dialogResult = MessageBox.Show("User found. Would you like to delete " + deleteUsernameTxtBox.Text + "?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList());
-                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList());
+                    File.WriteAllLines("login.txt", File.ReadLines("login.txt").Where(l => !l.Equals(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
+                    File.WriteAllLines("customerDB.txt", File.ReadLines("customerDB.txt").Where(l => !l.Equals(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)).ToList()); //Reads line by line and skips the line with the user's input
                     File.Delete(deleteUsernameTxtBox.Text + ".txt");
                 }
 
