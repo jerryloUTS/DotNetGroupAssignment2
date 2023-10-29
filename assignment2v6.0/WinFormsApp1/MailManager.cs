@@ -17,19 +17,23 @@ namespace assignment2
         private static SmtpClient smptServer = new SmtpClient("smtp-mail.outlook.com", 587);
 
         //this will send the customer booking confirmation.
-        private static void addCredentials()
+        private static void AddCredentials()
         {
             NetworkCredential credential = new NetworkCredential(emailAddress, password);
             smptServer.Credentials = credential;
+            smptServer.EnableSsl = true;
         }
 
         public static void SendBookingConfirmation(string customerName, string customerEmail, RoomBooking roomBooking)
         {
+            //adds the credentials
+            AddCredentials();
+            //generates the mail message.
             MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(emailAddress);
+            mailMessage.From = new MailAddress(emailAddress, "Hotel Management System");
             mailMessage.To.Add(new MailAddress(customerEmail));
             mailMessage.Subject = "Booking confirmation";
-            string messaageStr = "Hi " + customerName + ",\n\n You have booked your room " + roomBooking.RoomId + "from ";
+            string messaageStr = "Hi " + customerName + ",\n\n You have booked your room " + roomBooking.RoomId + " from ";
             messaageStr += roomBooking.CheckInDate + " until " + roomBooking.CheckOutDate + ".";
             mailMessage.Body = messaageStr;
             //sends the email
