@@ -31,7 +31,7 @@ namespace assignment2
         private void button2_Click(object sender, EventArgs e)
         { 
             var lines = File.ReadAllText("roomDisplay.txt");
-            if (!File.Exists("Room " + roomSearch.Text + ".txt"))
+            if (!File.Exists("Room " + roomSearch.Text + ".txt")) //Error if room does not exist.
             {
                 MessageBox.Show("Room " + roomSearch.Text + " was not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
@@ -40,7 +40,7 @@ namespace assignment2
 
                 if (!lines.Contains(roomSearch.Text))
                 {
-                    MessageBox.Show("no", "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Room " + roomSearch.Text + " was not found., "Success", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 if (lines.Contains(roomSearch.Text))
