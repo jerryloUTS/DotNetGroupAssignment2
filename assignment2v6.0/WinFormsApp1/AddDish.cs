@@ -107,24 +107,24 @@ namespace assignment2
             }
         }
 
-        //public Boolean validDish(string dish)
-        //{
-        //    string[] accInfo = File.ReadAllLines("dish.txt");
-        //    for (int i = 0; i < File.ReadLines("dish.txt").Count(); i++)
-        //    {
-        //        string[] temp = accInfo[i].Split(',');
-        //        Console.WriteLine(temp[0]);
-        //        if (temp[0] == dish)
-        //        {
-        //            return true;
-        //        }
-        //        else
-        //        {
-        //
-        //        }
-        //    }
-        //    return false;
-        //}
+        public Boolean validDish(string dish)
+        {
+            string[] accInfo = File.ReadAllLines("dish.txt");
+            for (int i = 0; i < File.ReadLines("dish.txt").Count(); i++)
+            {
+                string[] temp = accInfo[i].Split(',');
+                Console.WriteLine(temp[0]);
+                if (temp[0] == dish)
+                {
+                    return true;
+                }
+                else
+                {
+        
+                }
+            }
+            return false;
+        }
 
         private void label4_Click(object sender, EventArgs e)
         {
