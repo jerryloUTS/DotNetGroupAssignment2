@@ -43,7 +43,7 @@ namespace assignment2
             {
                 MessageBox.Show("User not found. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text))
+            if (lines.Contains(deleteUsernameTxtBox.Text + "," + deletePasswordTxtBox.Text) && lines1.Contains(deleteNameBox.Text + "," + deleteUsernameTxtBox.Text)) //Scans "login.txt" and "customerDB.txt" for user input.
             {
                 DialogResult dialogResult = MessageBox.Show("User found. Would you like to delete " + deleteUsernameTxtBox.Text + "?", "Delete User", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
                 if (dialogResult == DialogResult.Yes)
