@@ -48,7 +48,7 @@ namespace assignment2
                     {
                         string[] dishSplit = line.Split(',');
                         string[] dishSplits = line.Split(',');
-                        richTextBox1.AppendText("Dish:" + dishSplit[0] + "\n");
+                        richTextBox1.AppendText("Dish: " + dishSplit[0] + "\n");
                         richTextBox1.AppendText("Price: " + dishSplit[1] + "\n");
                         richTextBox1.AppendText("Calories (kJ): " + dishSplit[2] + "\n");
                         richTextBox1.AppendText("Meal Type: " + dishSplit[3] + "\n");
