@@ -15,14 +15,16 @@ namespace assignment2
     public partial class BookRoomForm : Form
     {
         private string customerUserName;
+        private string receptionistName;
         private int roomCode;
         private bool formComplete = false;
         public bool FormComplete { get => formComplete; set => formComplete = value; }
 
-        public BookRoomForm(string customerUserName, int roomCode)
+        public BookRoomForm(string receptionistName, string customerUserName, int roomCode)
         {
             InitializeComponent();
             this.customerUserName = customerUserName;
+            this.receptionistName = receptionistName;
             this.roomCode = roomCode;
 
         }
@@ -55,6 +57,11 @@ namespace assignment2
             if (!(numbersOfGuests > 0))
             {
                 MessageBox.Show("Please Input the numbers of guests", "Not all fields entered", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            //checks if either of the dates are within range, for example if the check in date is greater then the checkout date, it should display an error.
+            else if (checkInDate > checkOutDate)
+            {
+                MessageBox.Show("The check out date must be equal or greater then the check in date.", "Invalid Date Selection.", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else if (IsAnyRoomsBooked(roomBookings, newBooking))
             {
@@ -106,7 +113,7 @@ namespace assignment2
 
             }
             //this will try another way of parsing dates if a format exception has occurred.
-            /*catch(FormatException)
+            catch(FormatException)
             {
                 List<RoomBooking> alternateRoomBookings = new List<RoomBooking>();
                 
@@ -131,13 +138,13 @@ namespace assignment2
                 return alternateRoomBookings;
 
                 
-            }*/
+            }
             //this will not cause the program to crash if there is no file found, it will just display a message on the debug line.
             catch (FileNotFoundException)
             {
                 Debug.WriteLine("The file is not found, you can create a new booking");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
@@ -152,11 +159,6 @@ namespace assignment2
             if (currentBooking.RoomId == newBooking.RoomId)
             {
                 //then a nested if statements occurrs to check the booking dates for that specific room.
-                //only checks the actual edge cases.
-                /*if (currentBooking.CheckInDate == newBooking.CheckInDate || currentBooking.CheckOutDate == newBooking.CheckOutDate)
-                {
-                    return true;
-                }*/
                 //checks the date ranges if hotel room is already booked for some or all of the selected dates.
                 if (currentBooking.CheckInDate < newBooking.CheckOutDate && newBooking.CheckInDate < currentBooking.CheckOutDate)
                 {
@@ -191,6 +193,9 @@ namespace assignment2
         {
             //displays a message with the customer username and room code.
             lblBookingInfo.Text = "You are Booking a room for " + customerUserName + " in Room #" + roomCode;
+            //sets the min date range for the date time pickers so they can only book for days ahead.
+            dtpCheckInDate.MinDate = DateTime.Now;
+            dtpCheckOutDate.MinDate = DateTime.Now;
         }
 
         //this is a helperfunction that will combine both the date and times from seperate form controls.
@@ -203,24 +208,31 @@ namespace assignment2
         {
             try
             {
+                //displays the busy cursor symbol on the mouse pointer to the user while the smtp client connects to the server
+                Cursor.Current = Cursors.WaitCursor;
                 string customerName = "";
                 string customerEmail = "";
-                foreach(string line in File.ReadAllLines(this.customerUserName + ".txt"))
+                foreach (string line in File.ReadAllLines(this.customerUserName + ".txt"))
                 {
                     string[] splits = line.Split('|');
                     customerName = splits[0];
                     customerEmail = splits[1];
                 }
                 //sends the request
-                MailManager.SendBookingConfirmation(customerName, customerEmail, roomBooking);
+                MailManager.SendBookingConfirmation(receptionistName, customerName, customerEmail, roomBooking);
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 Debug.WriteLine("Unable to send confirmation email because the text file was not found.");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Debug.WriteLine("Unable to send email " + ex.Message);
+            }
+            finally
+            {
+                //returns back to a normal cursor.
+                Cursor.Current = Cursors.Default;
             }
         }
     }

@@ -101,9 +101,9 @@ namespace assignment2
             }
         }
 
-        
 
-        
+
+
         private void label5_Click(object sender, EventArgs e)
         {
 
@@ -194,6 +194,6 @@ namespace assignment2
             }
             return false;
         }
-        
+
     }
 }

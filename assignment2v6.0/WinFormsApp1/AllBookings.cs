@@ -34,6 +34,8 @@ namespace assignment2
             roomCodeCol.ColumnName = "roomCode";
             DataColumn customerUserNameCol = new DataColumn();
             customerUserNameCol.ColumnName = "customerUserName";
+            DataColumn customerNameCol = new DataColumn();
+            customerNameCol.ColumnName = "name";
             DataColumn checkInDateCol = new DataColumn();
             checkInDateCol.ColumnName = "checkInDate";
             DataColumn checkInTimeCol = new DataColumn();
@@ -50,6 +52,7 @@ namespace assignment2
             bookedRooms.Columns.Add(bookingIdCol);
             bookedRooms.Columns.Add(roomCodeCol);
             bookedRooms.Columns.Add(customerUserNameCol);
+            bookedRooms.Columns.Add(customerNameCol);
             bookedRooms.Columns.Add(checkInDateCol);
             bookedRooms.Columns.Add(checkInTimeCol);
             bookedRooms.Columns.Add(checkOutDateCol);
@@ -66,9 +69,38 @@ namespace assignment2
         //this will initislise the data grid view with a datasource and rename the columns for display.
         private void InitialiseDataGridView()
         {
+            //renames the columns to make it more natural for the user to view.
             dgvAllBookings.DataSource = bookedRooms;
-            dgvAllBookings.Columns[0].HeaderText = "Room Code #";
+            dgvAllBookings.Columns[0].HeaderText = "#";
+            dgvAllBookings.Columns[1].HeaderText = "Room Code";
+            dgvAllBookings.Columns[2].HeaderText = "Customer Username";
+            dgvAllBookings.Columns[3].HeaderText = "Name";
+            dgvAllBookings.Columns[4].HeaderText = "Check In Date";
+            dgvAllBookings.Columns[5].HeaderText = "Check In Time";
+            dgvAllBookings.Columns[6].HeaderText = "Check Out Date";
+            dgvAllBookings.Columns[7].HeaderText = "Check Out Time";
+            dgvAllBookings.Columns[8].HeaderText = "Guests";
+            dgvAllBookings.Columns[9].HeaderText = "Dependents";
 
+        }
+
+        //this function will get the customer name.
+        private string GetCustomerName(string customerUserName)
+        {
+            try
+            {
+                string customerName = "";
+                foreach (string line in File.ReadAllLines(customerUserName + ".txt"))
+                {
+                    string[] splits = line.Split('|');
+                    customerName = splits[0];
+                }
+                return customerName;
+            }
+            catch (Exception ex)
+            {
+                return "";
+            }
         }
 
         private void LoadBookingsFromTxtFile()
@@ -82,6 +114,7 @@ namespace assignment2
                     row["id"] = splits[0];
                     row["roomCode"] = splits[2];
                     row["customerUserName"] = splits[1];
+                    row["name"] = GetCustomerName(splits[1]);
                     row["checkInDate"] = ConvertToShortDateOnly(splits[3]);
                     row["checkInTime"] = ConvertToTimeOnly(splits[3]);
                     row["checkOutDate"] = ConvertToShortDateOnly(splits[4]);
@@ -90,12 +123,12 @@ namespace assignment2
                     row["dependents"] = splits[6];
                     bookedRooms.Rows.Add(row);
                 }
-            } 
-            catch(FileNotFoundException) 
-            {
-                MessageBox.Show("An error has occurred when loading saved bookings from disk.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
             }
-            
+            catch (FileNotFoundException)
+            {
+                MessageBox.Show("An error has occurred when loading saved bookings from disk.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         //this is a function that will be used for converting dates from a string into a dateTime object and convert it back to string, it will be used to display the appropriate date formats and a time in a seperate column
@@ -107,7 +140,7 @@ namespace assignment2
                 string shortDateFormat = date.ToString("dd/MM/yyyy");
                 return shortDateFormat;
             }
-            catch(FormatException)
+            catch (FormatException)
             {
                 DateTime date = DateTime.ParseExact(dateTimeStr, "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
                 string shortDateFormat = date.ToString("dd/MM/yyyy");
@@ -131,7 +164,12 @@ namespace assignment2
                 return timeDateFormat;
             }
 
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

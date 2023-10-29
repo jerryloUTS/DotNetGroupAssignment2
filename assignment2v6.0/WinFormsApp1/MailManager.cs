@@ -24,7 +24,7 @@ namespace assignment2
             smptServer.EnableSsl = true;
         }
 
-        public static void SendBookingConfirmation(string customerName, string customerEmail, RoomBooking roomBooking)
+        public static void SendBookingConfirmation(string receptionistName, string customerName, string customerEmail, RoomBooking roomBooking)
         {
             //adds the credentials
             AddCredentials();
@@ -33,8 +33,12 @@ namespace assignment2
             mailMessage.From = new MailAddress(emailAddress, "Hotel Management System");
             mailMessage.To.Add(new MailAddress(customerEmail));
             mailMessage.Subject = "Booking confirmation";
-            string messaageStr = "Hi " + customerName + ",\n\n You have booked your room " + roomBooking.RoomId + " from ";
+            string messaageStr = "Hi " + customerName + ",\n\nWe have booked your room " + roomBooking.RoomId + " from ";
             messaageStr += roomBooking.CheckInDate + " until " + roomBooking.CheckOutDate + ".";
+            messaageStr += "\n\nBest regards,\n\n";
+            messaageStr += receptionistName;
+            messaageStr += "\nReceptionist from Hotel Management System";
+
             mailMessage.Body = messaageStr;
             //sends the email
             smptServer.Send(mailMessage);

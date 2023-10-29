@@ -17,6 +17,7 @@ namespace assignment2
         private DataTable roomsDataTable = new DataTable();
         private string username;
         private LoginForm loginForm; //passes login information from the logged in user.
+        private string receptionistName = "";
         public ReceptionistForm(LoginForm loginForm, string username)
         {
             InitializeComponent();
@@ -30,8 +31,10 @@ namespace assignment2
             DialogResult dResult = addCustomerForm.ShowDialog();
             if (dResult == DialogResult.OK)
             {
-                //refreshes the datatable
-                this.Refresh();
+                //refreshes the datatables for the list boxes.
+                ReloadAllDataTables();
+                lbCustomers.DataSource = customerDataTable;
+                lbRooms.DataSource = roomsDataTable;
             }
 
         }
@@ -41,6 +44,15 @@ namespace assignment2
         private void lbCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        private void ReloadAllDataTables()
+        {
+            //clears all data from the data tables.
+            customerDataTable.Clear();
+            roomsDataTable.Clear();
+            //reloads the data from the text file
+            FetchCustomerFromDB();
+            FetchRoomsFromTxt();
         }
 
         private void ReceptionistForm_Load(object sender, EventArgs e)
@@ -56,15 +68,15 @@ namespace assignment2
         {
             try
             {
-                string name = "";
-                foreach(string line in File.ReadAllLines(this.username + ".txt"))
+                
+                foreach (string line in File.ReadAllLines(this.username + ".txt"))
                 {
                     string[] splits = line.Split('|');
-                    name = splits[0];
+                    receptionistName = splits[0];
                 }
-                lblGreeting.Text = "Hello " + name;
+                lblGreeting.Text = "Hello " + receptionistName;
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
                 lblGreeting.Text = "Unable to find name";
             }
@@ -75,7 +87,7 @@ namespace assignment2
             //read selecttion from listboxes.
             string customerUsername = (string)lbCustomers.SelectedValue;
             int roomCode = Convert.ToInt32((String)lbRooms.SelectedValue);
-            BookRoomForm bookRoom = new BookRoomForm(customerUsername, roomCode);
+            BookRoomForm bookRoom = new BookRoomForm(receptionistName, customerUsername, roomCode);
             bookRoom.ShowDialog();
 
         }
@@ -114,7 +126,7 @@ namespace assignment2
         private void AddCustomersToDataTable()
         {
             AddCustColumns();
-            AddCustomerDataFromDB();
+            FetchCustomerFromDB();
             RefreshCustomerList();
 
         }
@@ -145,7 +157,7 @@ namespace assignment2
 
         }
 
-        private void AddCustomerDataFromDB()
+        private void FetchCustomerFromDB()
         {
             foreach (string line in File.ReadAllLines("customerDB.txt"))
             {
@@ -198,6 +210,19 @@ namespace assignment2
         {
             viewReservations diningReservations = new viewReservations();
             diningReservations.Show();
+        }
+
+        private void getSpecificRoomDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SearchRoom searchRoom = new SearchRoom((String)lbRooms.SelectedValue);
+            searchRoom.Show();
+
+        }
+
+        private void viewAllCustomersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AllCustomers allCustomers = new AllCustomers();
+            allCustomers.Show();
         }
     }
 }
